@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Porcelain Witness - Timeline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#1E3A5F', gold: '#D4AF37' },
+            ceramic: { black: '#1A1A1A', white: '#F8F8F8', blue: '#1E3A5F', gray: '#666666', lightgray: '#E5E5E5' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Noto Serif SC"', 'serif'],
+          },
+          boxShadow: { soft: '0 14px 35px rgba(15,23,42,0.14)' }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style(css)/style.css?v=timeline_fix_v1">
+</head>
+
+<body class="bg-ceramic-white text-ceramic-black font-sans scroll-smooth">
+
+  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="mainNav">
+    <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+      <a href="Default layout.html" class="text-2xl font-serif font-bold text-ceramic-white text-shadow">Porcelain Witness</a>
+      
+      <div class="hidden md:flex space-x-8 items-center h-full">
+        <a href="index.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">HOME</a>
+        <a href="collections.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">COLLECTIONS</a>
+        
+        <div class="relative group h-full flex items-center cursor-pointer">
+          <span class="text-ceramic-white hover:text-ceramic-lightgray transition-colors flex items-center gap-1">
+            EXHIBITION <i class="fa fa-angle-down text-sm ml-1"></i>
+          </span>
+          <div class="nav-dropdown absolute top-full left-0 w-56 bg-ceramic-black/95 backdrop-blur-md shadow-2xl rounded-sm pt-2 overflow-hidden border-t-2 border-ceramic-white/20">
+            <a href="timeline web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors border-b border-gray-700/30">Timeline Narrative</a>
+            <a href="technique narrative web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors border-b border-gray-700/30">Craft Narrative</a>
+            <a href="cultrual narrative web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors">Culture Narrative</a>
+          </div>
+        </div>
+        <a href="Aboutus.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">ABOUT US</a>
+        <button id="layoutToggle" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors flex items-center gap-2">
+          Choose Your Layout <i class="fa fa-chevron-down text-xs"></i>
+        </button>
+      </div>
+      <button class="md:hidden text-ceramic-white text-2xl" id="menuBtn"><i class="fa fa-bars"></i></button>
+    </div>
+    
+    <div class="md:hidden hidden bg-ceramic-black/95 absolute w-full" id="mobileMenu">
+        </div>
+  </nav>
+
+  <div class="layout-panel" id="layoutPanel">
+    <div class="layout-close text-ceramic-white hover:text-ceramic-lightgray" id="layoutClose">
+        <i class="fa fa-times text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif font-bold text-ceramic-white mb-6">Choose your layout</h3>
+    <p class="text-ceramic-lightgray mb-8 text-sm leading-relaxed">
+        Select a time period to change the website style across all pages.
+    </p>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1500 ~ 1650</h4>
+            <a href="#" data-theme="1500" class="layout-btn layout-btn-1500">Select Ming Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1650 ~ 1800</h4>
+            <a href="#" data-theme="1650" class="layout-btn layout-btn-1650">Select High Qing Style</a>
+        </div>
+    </div>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1800 ~ 1900</h4>
+            <a href="#" data-theme="1800" class="layout-btn layout-btn-1800">Select Late Qing Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1900 ~ 1990</h4>
+            <a href="#" data-theme="1900" class="layout-btn layout-btn-1850">Select Republic Style</a>
+        </div>
+    </div>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1990 ~ 2035</h4>
+            <a href="#" data-theme="1990" class="layout-btn layout-btn-1990">Select Modern Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">2035 ~ Future</h4>
+            <a href="#" data-theme="2035" class="layout-btn layout-btn-2035">Select Future Style</a>
+        </div>
+    </div>
+    
+    <div class="mt-4 pt-4 border-t border-white/10">
+        <a href="#" data-theme="default" class="text-sm text-ceramic-gray hover:text-white underline">Reset to Default Style</a>
+    </div>
+</div>
+
+  <main class="pt-20 md:pt-24 pb-16">
+
+    <section id="exhibition3" class="intro-bg">
+      <div class="intro-panel max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-16 md:py-24">
+        <p class="text-xs tracking-[0.28em] uppercase text-gray-500 mb-2">Exhibition · Timeline Narrative</p>
+        <h1 class="font-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-blue mb-4 leading-snug">
+          Porcelain Witness: Five Centuries of China and the World
+        </h1>
+
+        <div class="perspective-controls mb-6">
+            <button class="perspective-btn active" data-view="public">For Public</button>
+            <button class="perspective-btn" data-view="children">For Children</button>
+            <button class="perspective-btn" data-view="scholar">For Scholars</button>
+        </div>
+
+        <div class="view-content view-public active">
+            <p class="text-sm md:text-base text-gray-700 max-w-7xl leading-relaxed">
+              Porcelain is quiet, yet powerful. It is more than an object of admiration; it is a witness to history. This timeline narrative follows five chronological rooms that guide visitors from early Ming voyages and global silver trade, through the imperial splendour of the High Qing, the urban transformations of the late nineteenth century, modern reforms, and finally towards digital futures.
+            </p>
+        </div>
+
+        <div class="view-content view-children">
+            <p class="text-sm md:text-base text-gray-700 max-w-7xl leading-relaxed font-medium">
+                Did you know that plates and vases can tell stories? Imagine porcelain as a time traveler! 🕰️ <br>
+                In this exhibition, we will travel through 500 years of history. We will see how Chinese porcelain sailed on big ships across the oceans, how Emperors used it to show their power, and how it is changing today in the digital world like video games! Let's start the adventure!
+            </p>
+        </div>
+
+        <div class="view-content view-scholar">
+            <p class="text-sm md:text-base text-gray-800 max-w-7xl leading-relaxed">
+                This exhibition posits porcelain not merely as a decorative art, but as an active agent in the history of globalization. Spanning five centuries, the timeline elucidates the dialectical relationship between Jingdezhen's ceramic industry and global socio-economic shifts. From the tributary geopolitics of the Ming Dynasty to the digital ontologies of the 21st century, we examine how material culture mediates cross-cultural exchange and political discourse.
+            </p>
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6">
+        <div class="grid md:grid-cols-[minmax(0,2.4fr)_minmax(0,4.6fr)] gap-4 lg:gap-6 items-stretch">
+
+          <div class="flex gap-4 h-[70vh] md:h-[75vh] lg:h-[78vh]">
+            <div class="flex-1 flex items-center justify-center">
+              <div class="map-room-wrapper">
+                <img src="asset/img/timeline-hex-map.jpg" alt="Floorplan">
+                <button class="map-room-label" data-section-timeline="1" style="top:36%;left:50%;">Room 1</button>
+                <button class="map-room-label" data-section-timeline="2" style="top:43%;left:25%;">Room 2</button>
+                <button class="map-room-label" data-section-timeline="3" style="top:60%;left:32%;">Room 3</button>
+                <button class="map-room-label" data-section-timeline="4" style="top:57%;left:75%;">Room 4</button>
+                <button class="map-room-label" data-section-timeline="5" style="top:50%;left:50%;">Room 5</button>
+              </div>
+            </div>
+
+            <div class="w-8 md:w-10 flex items-stretch justify-center">
+              <div class="timeline-column h-full flex flex-col items-center">
+                <div class="timeline-line"></div>
+                <button class="timeline-step timeline-active" data-section-timeline="1"><div class="timeline-dot"></div><span class="timeline-year-label">MING 1500-1650</span></button>
+                <button class="timeline-step" data-section-timeline="2"><div class="timeline-dot"></div><span class="timeline-year-label">HIGH QING 1650-1800</span></button>
+                <button class="timeline-step" data-section-timeline="3"><div class="timeline-dot"></div><span class="timeline-year-label">LATE QING 1800-1990s</span></button>
+                <button class="timeline-step" data-section-timeline="4"><div class="timeline-dot"></div><span class="timeline-year-label">MODERN 1900s</span></button>
+                <button class="timeline-step" data-section-timeline="5"><div class="timeline-dot"></div><span class="timeline-year-label">FUTURE 2035+</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white shadow-soft p-4 md:p-5 lg:p-6 flex flex-col h-[70vh] md:h-[75vh] lg:h-[78vh] ml-15 md:ml-14 lg:ml-40 mt-6 md:mt-10">
+            <div class="flex flex-wrap items-center gap-2 text-[0.7rem] tracking-[0.18em] uppercase text-gray-500 mb-3">
+              <span class="px-2 py-0.5 rounded-full border border-gray-300">Timeline Storyline</span>
+              <span class="px-2 py-0.5 rounded-full border border-gray-300">5 Rooms · 18 Objects</span>
+            </div>
+
+            <div class="mt-1 section-scroll overflow-y-auto pr-1 text-sm md:text-[0.95rem] leading-relaxed space-y-8">
+
+              <article class="section-article active-article" data-section-article="1">
+                <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-1">Room 1 · The Empire's Gaze (Ming)</h2>
+
+                <div class="view-content view-public active">
+                    <p class="mb-2">Between 1405 and 1433, the Yongle Emperor sent Zheng He on seven major voyages across the Indian Ocean. These expeditions combined imperial ambition with curiosity. By the mid-sixteenth century, global trade transformed with the Manila Galleon route, bringing American silver to China. Jingdezhen responded by creating Blue-and-white porcelain for global buyers.</p>
+                </div>
+                <div class="view-content view-children">
+                    <p class="mb-2"><strong>The Great Voyages! 🚢</strong><br>Long ago, a famous admiral named Zheng He sailed giant wooden ships all the way to Africa! He brought back giraffes and jewels. Later, traders from Europe came to buy Chinese porcelain because they loved the beautiful blue drawings on white clay. They paid with silver coins!</p>
+                </div>
+                <div class="view-content view-scholar">
+                    <p class="mb-2">This era defines the transition from the state-sponsored voyages of Zheng He (1405–1433) to the privatized maritime trade networks of the late Ming. The influx of New World silver via the Manila Galleon trade fundamentally altered the Ming fiscal system and stimulated Jingdezhen's production of 'Kraak' porcelain, specifically designed for European bourgeois tastes.</p>
+                </div>
+
+                <h3 class="font-semibold text-sm md:text-base text-gray-800 mt-3 mb-1">Object Highlights</h3>
+                <div class="mt-4 grid grid-cols-3 gap-2 md:gap-3">
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item3.png" alt="Wucai Vase" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item1.png" alt="Blue and White Dish" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item2.png" alt="Doucai Bowl" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </article>
+
+              <article class="section-article" data-section-article="2">
+                <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-1">Room 2 · The Cosmos of the Court (High Qing)</h2>
+
+                <div class="view-content view-public active">
+                    <p class="mb-2">The "High Qing" era (1662-1795) marked the height of China's absolute monarchy. Imperial kilns at Jingdezhen became extensions of imperial will. At the same time, Jesuit missionaries introduced European techniques like enamelling. The emperors used these Western skills to strengthen their own image as rulers of the world.</p>
+                </div>
+                <div class="view-content view-children">
+                    <p class="mb-2"><strong>The Emperor's New Colors! 🎨</strong><br>During this time, the Emperors were very powerful. They met visitors from Europe who taught them how to make new, bright colors like pink and yellow on porcelain. The Emperor wanted everything to be perfect, so the artists had to be very careful!</p>
+                </div>
+                <div class="view-content view-scholar">
+                    <p class="mb-2">The High Qing period represents the zenith of the Imperial Kiln system. Through the agency of Jesuit missionaries like Castiglione, the court assimilated Western enamelling technology (Falangcai). This was not passive reception but active appropriation, using Western perspective and chiaroscuro to visually construct the Qianlong Emperor's universalist ideology.</p>
+                </div>
+
+                <div class="mt-4 grid grid-cols-3 gap-2 md:gap-3">
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item4.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item8.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item5.png" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </article>
+
+              <article class="section-article" data-section-article="3">
+                <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-1">Room 3 · A Shift in the Wind (Late Qing)</h2>
+
+                <div class="view-content view-public active">
+                    <p class="mb-2">After the Opium Wars, China was forced to open treaty ports to the West. The court's control weakened, but cities flourished. A wealthy middle class emerged, wanting new objects. Porcelain changed from ritual use to everyday aesthetics, showing unprecedented freedom in form and colour.</p>
+                </div>
+                <div class="view-content view-children">
+                    <p class="mb-2"><strong>Cities are Growing! 🏙️</strong><br>China started to trade more with the world. People in cities became richer and wanted beautiful things for their homes, like colorful vases with stories painted on them. Artists started painting freely, not just what the Emperor wanted.</p>
+                </div>
+                <div class="view-content view-scholar">
+                    <p class="mb-2">The post-Opium War era witnessed the disintegration of the imperial monopoly on high-quality ceramics. The rise of treaty ports like Shanghai fostered a bourgeois consumer culture. Porcelain production shifted towards 'Qianjiang' and later 'Fencai' styles, reflecting a modernization of literati aesthetics and the commodification of art for a nascent urban market.</p>
+                </div>
+
+                <div class="mt-4 grid grid-cols-3 gap-2 md:gap-3">
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item9.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item10.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item11.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item12.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item6.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item13.png" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </article>
+
+              <article class="section-article" data-section-article="4">
+                <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-1">Room 4 · The World's Echo (Modern)</h2>
+
+                <div class="view-content view-public active">
+                    <p class="mb-2">In 1978, China opened up to the world again. Jingdezhen transformed into a creative hub attracting international artists. Modern ceramic art now explores personal identity and global dialogue, expressing confidence in cultural heritage.</p>
+                </div>
+                <div class="view-content view-children">
+                    <p class="mb-2"><strong>Artists from Everywhere! 🌍</strong><br>After 1978, China invited friends from all over the world. Artists came to Jingdezhen to learn how to make pottery. They made huge sculptures and new cool designs, mixing old Chinese skills with new ideas!</p>
+                </div>
+                <div class="view-content view-scholar">
+                    <p class="mb-2">The Reform and Opening-up policy (1978) catalyzed the transition of Jingdezhen from a socialist production unit to a global creative cluster. Contemporary ceramicists now engage in a transnational dialogue, deconstructing traditional forms (as seen in Felicity Aylieff’s monumental works) to negotiate Chinese cultural identity in a globalized art world.</p>
+                </div>
+
+                <div class="mt-4 grid grid-cols-3 gap-2 md:gap-3">
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item14.JPEG" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item15.jpeg" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item7.jpeg" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </article>
+
+              <article class="section-article" data-section-article="5">
+                <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-1">Room 5 · Prelude to the Future</h2>
+
+                <div class="view-content view-public active">
+                    <p class="mb-2">Today, porcelain enters the "metaverse". With blockchain and NFTs, ceramic art becomes a digital asset. Clay and fire are not replaced but extended into virtual space, asking how we will preserve culture in the future.</p>
+                </div>
+                <div class="view-content view-children">
+                    <p class="mb-2"><strong>Porcelain in Video Games? 🎮</strong><br>Imagine owning a vase that only exists on a computer! Today, artists are making "digital porcelain" that you can collect like trading cards. It shows that even old traditions can become futuristic!</p>
+                </div>
+                <div class="view-content view-scholar">
+                    <p class="mb-2">The intersection of craft and Web3 technologies redefines materiality. Porcelain NFTs challenge the ontology of the object: works like "March" utilize NFC chips to bridge physical provenance with digital immutability. This room interrogates the future of heritage conservation in an era of virtualization and the Metaverse.</p>
+                </div>
+
+                <div class="mt-4 grid grid-cols-3 gap-2 md:gap-3">
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item16.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item17.png" class="w-full h-full object-cover">
+                  </div>
+                  <div class="aspect-[4/3] rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center text-[0.7rem] text-gray-500">
+                    <img src="asset/img/item18.png" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline-epilogue" class="mt-12 md:mt-16 border-t border-gray-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10">
+        <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-3">Timeline Epilogue · What Does Porcelain Remember?</h2>
+
+        <div class="view-content view-public active">
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-2">
+                Porcelain appears not as a passive backdrop, but as an active witness: it carries pigments from Persia, motifs from Europe, and trade routes across oceans. The timeline asks how objects remember. Porcelain records the shifting balance between court and city, local traditions and global connections.
+            </p>
+        </div>
+        <div class="view-content view-children">
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-2">
+                <strong>Porcelain Remembers Everything! 🧠</strong><br>
+                Every bowl and vase has a memory. It remembers the hands that made it and the ships that carried it. By looking at porcelain, we are actually reading a history book made of clay!
+            </p>
+        </div>
+        <div class="view-content view-scholar">
+            <p class="text-sm md:text-base text-gray-800 leading-relaxed mb-2">
+                Porcelain functions here as an archival medium. It records the shifting dialectic between center and periphery, empire and market. "Porcelain Witness" invites a reading of the ceramic surface as a palimpsest of global history, questioning how material culture will persist in a dematerialized, digital future.
+            </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="max-w-5xl mx-auto px-4 md:px-5 lg:px-6 pb-4">
+      <p class="text-xs md:text-sm text-gray-500 text-center">
+        <a href="collections.html" class="underline hover:text-brand-blue">click here to see all the collections</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-black text-ceramic-white py-12">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-8 md:mb-0">
+          <h3 class="text-2xl font-serif font-bold mb-2">Porcelain Witness</h3>
+          <p class="text-ceramic-gray">Five Centuries of China and the World</p>
+        </div>
+      </div>
+      <div class="border-t border-ceramic-gray/30 mt-8 pt-8 text-center text-ceramic-gray">
+        <p>Authored by UNIBO DHDK. Members: Yuming Lian, Xinyi Guo, Yutong Li</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="artifact-modal" id="artifactModal" aria-hidden="true">
+    <div class="artifact-modal-backdrop"></div>
+    <div class="artifact-modal-content" role="dialog" aria-modal="true">
+      <button class="artifact-modal-close" type="button" aria-label="Close">&times;</button>
+      <div class="artifact-modal-image-wrapper">
+        <img id="artifactModalImage" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="script/js/script.js?v=timeline_fix_v1"></script>
+</body>
+</html>

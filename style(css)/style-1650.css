@@ -1,0 +1,55 @@
+/* style(css)/style-1650.css */
+@import url("style.css");
+
+/* 1. 全局背景 (皇家黄 + 丝绸纹理) */
+body {
+    background-color: #2b1d1d !important; /* 深红木底色，突出前景 */
+    background-image: radial-gradient(#3e2b2b 15%, transparent 16%), radial-gradient(#3e2b2b 15%, transparent 16%) !important;
+    background-size: 20px 20px !important;
+    color: #e5d5b0 !important; /* 浅金文字 */
+    font-family: "Noto Serif SC", serif !important;
+}
+
+/* 2. 导航栏 (紫禁城红) */
+#mainNav {
+    background-color: rgba(66, 12, 9, 0.98) !important;
+    border-bottom: 3px solid #ffd700 !important; /* 纯金边 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* 3. 容器与卡片 (珐琅釉面感) */
+.intro-panel, .collection-item, .exhibition-card, .layout-panel {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+    border: 2px solid #ffd700 !important; /* 金边 */
+    border-radius: 12px !important;
+    box-shadow: 
+        inset 0 0 20px rgba(0,0,0,0.8),
+        0 10px 20px rgba(0,0,0,0.5) !important; /* 强立体感 */
+}
+/* 标题装饰 */
+h1, h2, h3 {
+    color: #ffd700 !important; /* 金色标题 */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important;
+    font-weight: 900 !important;
+}
+
+/* 4. 按钮 (景泰蓝风格) */
+.perspective-btn, .layout-btn {
+    background-color: #003366 !important; /* 景泰蓝蓝 */
+    border: 1px solid #ffd700 !important;
+    color: #ffd700 !important;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5) !important;
+    border-radius: 20px !important;
+}
+.perspective-btn.active, .layout-btn:hover {
+    background-color: #b22222 !important; /* 胭脂红 */
+    box-shadow: 0 0 15px #ffd700 !important; /* 发光 */
+}
+
+/* 5. 细节调整 */
+.text-ceramic-gray { color: #aaaaaa !important; }
+.timeline-line { background: linear-gradient(to bottom, #ffd700, #b22222) !important; }
+.timeline-step.timeline-active .timeline-dot { 
+    background: #ffd700 !important; 
+    box-shadow: 0 0 10px #ffd700 !important; 
+}

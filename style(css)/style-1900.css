@@ -1,0 +1,63 @@
+/* style(css)/style-1900.css - Republic: High Contrast & Readable */
+@import url("style.css");
+
+/* 1. 全局背景 */
+body {
+    background-image: url('../asset/img/1990bg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-color: #a63737 !important;
+    color: #ffffff !important; /* 全局文字改白 */
+    font-family: "Noto Serif SC", serif !important;
+}
+
+/* 2. 核心修复：给内容区加深色底，文字变白 */
+.container, main, .section-content, .intro-panel, .collection-item {
+    background-color: rgba(20, 20, 20, 0.85) !important; /* 深黑半透明底 */
+    border: 2px solid #b22222 !important; /* 暗红边框 */
+    box-shadow: 5px 5px 0px #000 !important; /* 硬阴影 */
+    color: #e0e0e0 !important; /* 浅灰白正文 */
+    padding: 25px !important;
+}
+
+/* 3. 特殊文字修复 (你圈出来的那些小标题) */
+.text-ceramic-gray, .text-gray-500, .text-gray-600 {
+    color: #cccccc !important; /* 强制变亮灰，防止看不清 */
+}
+strong, b, em {
+    color: #ffffff !important; /* 强调文字纯白 */
+}
+
+/* 4. 标题 (朱红/白) */
+h1, h2, h3 {
+    color: #ff4d4d !important; /* 亮红标题 */
+    text-shadow: 2px 2px 0px #000 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+/* 5. 导航栏 */
+#mainNav {
+    background-color: #000 !important;
+    border-bottom: 4px solid #cc0000 !important;
+}
+#mainNav a { color: #fff !important; font-weight: bold !important; }
+
+/* 6. 图片 */
+img, video {
+    filter: none !important;
+    border: 2px solid #fff !important; /* 白框 */
+}
+
+/* 7. 按钮 */
+.perspective-btn, .layout-btn {
+    border-radius: 0 !important;
+    background-color: #b22222 !important;
+    color: #fff !important;
+    border: none !important;
+}
+.perspective-btn.active, .layout-btn:hover {
+    background-color: #fff !important;
+    color: #b22222 !important;
+}

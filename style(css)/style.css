@@ -1,0 +1,190 @@
+/* style(css)/style.css - FULL VERSION (Includes About Us) */
+
+/* ==========================================================================
+   1. GLOBAL & UTILITIES
+   ========================================================================== */
+.content-auto { content-visibility: auto; }
+.text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.scroll-smooth { scroll-behavior: smooth; }
+
+/* Colors Helper */
+.bg-ceramic-black { background-color: #1A1A1A; }
+.text-ceramic-white { color: #F8F8F8; }
+.text-ceramic-gray { color: #666666; }
+.text-ceramic-lightgray { color: #E5E5E5; }
+.bg-ceramic-black\/90 { background-color: rgba(26, 26, 26, 0.9); }
+.bg-ceramic-black\/95 { background-color: rgba(26, 26, 26, 0.95); }
+.border-ceramic-gray\/30 { border-color: rgba(102, 102, 102, 0.3); }
+.border-ceramic-white\/20 { border-color: rgba(248, 248, 248, 0.2); }
+
+/* Intro Background */
+.intro-bg {
+    background-image: url('../asset/img/vase-background.jpg');
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+}
+.intro-panel { background: rgba(247, 241, 227, 0.95); }
+
+/* Scrollbar */
+.section-scroll { scrollbar-width: thin; scrollbar-color: #cbd5f5 transparent; }
+.section-scroll::-webkit-scrollbar { width: 6px; }
+.section-scroll::-webkit-scrollbar-track { background: transparent; }
+.section-scroll::-webkit-scrollbar-thumb { background: #cbd5f5; border-radius: 999px; }
+
+/* Animations */
+.nav-dropdown { display: none; animation: fadeIn 0.2s ease-in-out; }
+.group:hover .nav-dropdown { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.animate-slide-in { opacity: 0; transform: translateX(-50px); transition: opacity 1.5s ease, transform 1.5s ease; }
+.animate-slide-in.active { opacity: 1; transform: translateX(0); }
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+
+/* ==========================================================================
+   2. HOMEPAGE SPECIFIC
+   ========================================================================== */
+.slider-container { position: relative; overflow: hidden; height: 100%; }
+.slider { display: flex; transition: transform 0.5s ease; height: 100%; }
+.slide { min-width: 100%; height: 100%; }
+.slide-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
+    background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.slide-arrow:hover { background: rgba(255, 255, 255, 0.9); }
+.slide-arrow-left { left: 20px; }
+.slide-arrow-right { right: 20px; }
+.slide-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; display: inline-block; margin: 0 5px; cursor: pointer; transition: all 0.3s ease; }
+.slide-dot.active { background: #1E3A5F; transform: scale(1.2); }
+.exhibition-card { transition: transform 0.5s ease, box-shadow 0.5s ease; }
+.exhibition-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.artifact-link { color: #1E3A5F; text-decoration: underline; font-weight: 600; }
+.artifact-link:hover { color: #0F243A; }
+
+
+/* ==========================================================================
+   3. TIMELINE SPECIFIC
+   ========================================================================== */
+.timeline-column { position: relative; }
+.timeline-line {
+    position: absolute; top: 6%; bottom: 6%; left: 50%; transform: translateX(-50%); width: 2px;
+    background: linear-gradient(to bottom, rgba(30,58,95,0.1), rgba(30,58,95,0.9), rgba(30,58,95,0.1));
+}
+.timeline-step { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.timeline-dot { width: 14px; height: 14px; border-radius: 999px; border: 2px solid #94a3b8; background: #ffffff; transition: all 0.2s ease; }
+.timeline-step:hover .timeline-dot { transform: scale(1.05); }
+.timeline-step.timeline-active .timeline-dot { border-color: #1E3A5F; box-shadow: 0 0 0 4px rgba(30,58,95,0.15); background: #1E3A5F; }
+.timeline-year-label { position: absolute; left: 150%; white-space: nowrap; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #03070e; }
+.timeline-step.timeline-active .timeline-year-label { color: #02224b; font-weight: bold; }
+@media (max-width: 768px) { .timeline-year-label { display: none; } }
+
+.map-room-wrapper { position: relative; width: 100%; height: 100%; }
+.map-room-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.map-room-label {
+    position: absolute; transform: translate(-50%, -50%);
+    padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    background: rgba(255,255,255,0.9); color: #475569; border: 1px solid rgba(148,163,184,0.9); cursor: pointer; white-space: nowrap; transition: all 0.2s ease;
+}
+.map-room-label:hover { background: #1E3A5F; color: #ffffff; border-color: #1E3A5F; box-shadow: 0 6px 18px rgba(15,23,42,0.22); }
+.map-room-label.timeline-active { background: #1E3A5F; color: #ffffff; border-color: #1E3A5F; }
+
+.section-article { display: none; }
+.section-article.active-article { display: block; animation: fadeInRight 0.4s ease; }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+
+
+/* ==========================================================================
+   4. CULTURE / TECHNIQUE SPECIFIC
+   ========================================================================== */
+body.page-culture { background-color: #fdf9fd; }
+
+/* Perspective Switcher */
+.perspective-controls { display: flex; gap: 10px; margin-top: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+.perspective-btn {
+    padding: 8px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    border: 1px solid #e5e7eb; background-color: #ffffff; color: #666;
+    transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.perspective-btn:hover { background-color: #f3f4f6; border-color: #d1d5db; }
+.perspective-btn.active {
+    background-color: #ea580c; color: #ffffff; border-color: #ea580c;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+.view-content { display: none; animation: fadeInContent 0.5s ease; }
+.view-content.active { display: block; }
+@keyframes fadeInContent { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* ==========================================================================
+   5. COLLECTIONS SPECIFIC
+   ========================================================================== */
+body.bg-ceramic-black { background-color: #121212 !important; color: #F8F8F8; }
+.filter-btn { cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+.filter-btn.active { color: #F8F8F8; border-bottom: 2px solid #C5A065; }
+
+@media (min-width: 1024px) {
+    .collection-item:nth-child(3n+1), .collection-item:nth-child(3n+2) { border-right: 1px solid #333; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .collection-item:nth-child(2n+1) { border-right: 1px solid #333; }
+}
+.modal-enter { opacity: 0; transform: scale(0.95); }
+.modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 0.3s ease, transform 0.3s ease; }
+.modal-exit { opacity: 0; transform: scale(0.95); transition: opacity 0.2s ease, transform 0.2s ease; }
+
+
+/* ==========================================================================
+   6. ABOUT US SPECIFIC (NEW!)
+   ========================================================================== */
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.thin-border-top { border-top: 1px solid rgba(255,255,255,0.08); }
+.thin-border-bottom { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+
+/* ==========================================================================
+   7. UNIVERSAL COMPONENTS (Modal, Panel, Buttons)
+   ========================================================================== */
+/* Layout Panel */
+.layout-panel {
+    position: fixed; top: 0; right: 0; bottom: 0; width: 380px; height: 100vh;
+    background: rgba(26, 26, 26, 0.98); border-left: 2px solid rgba(255,255,255,0.1);
+    z-index: 9999; padding: 30px 20px;
+    transform: translateX(100%); transition: transform 0.3s ease;
+    overflow-y: auto; display: block;
+}
+.layout-panel.active { transform: translateX(0); }
+.layout-close { position: absolute; top: 20px; right: 20px; cursor: pointer; }
+
+/* Layout Buttons */
+.layout-btn { padding: 16px 20px; border-radius: 2px; transition: all 0.3s ease; cursor: pointer; font-weight: 500; display: block; width: 100%; box-sizing: border-box; text-align: left; margin-top: 5px; }
+.layout-btn-1500 { background: #f0e6d6; color: #2c2418; border: 1px solid #c8b99c; font-family: 'Garamond', serif; }
+.layout-btn-1650 { background: #e8d9c0; color: #231b10; border: 1px solid #b8a586; font-family: 'Garamond', serif; }
+.layout-btn-1800 { background: #3a5a40; color: #daded4; border: 1px solid #588157; font-family: 'Brush Script MT', cursive; font-size: 1.2rem; }
+.layout-btn-1850 { background: #2d4a33; color: #c9d8c1; border: 1px solid #486d46; font-family: 'Brush Script MT', cursive; font-size: 1.2rem; }
+.layout-btn-1990 { background: #262626; color: #ffffff; border: 1px solid #555; border-left: 4px solid #ffffff; font-family: 'Inter', sans-serif; letter-spacing: 0.05rem; }
+.layout-btn-2035 { background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(45, 27, 78, 0.9)); color: #e0e0e0; border: 1px solid #8b5cf6; font-family: 'Inter', sans-serif; letter-spacing: 0.15rem; }
+.layout-row { display: flex; gap: 15px; margin-bottom: 25px; }
+.layout-item { flex: 1; display: flex; flex-direction: column; }
+
+/* Universal Modal */
+.artifact-image-wrapper { position: relative; cursor: pointer; overflow: hidden; border-radius: 0.75rem; }
+.artifact-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #ffffff; background: rgba(0, 0, 0, 0.45); opacity: 0; transition: opacity 0.2s ease;
+}
+.artifact-image-wrapper:hover .artifact-overlay { opacity: 1; }
+.artifact-modal { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; }
+.artifact-modal.active { display: flex; }
+.artifact-modal-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); }
+.artifact-modal-content {
+    position: relative; max-width: 90vw; max-height: 90vh; background: #ffffff; border-radius: 0.85rem;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.5); padding: 1.5rem; z-index: 10;
+}
+.artifact-modal-image-wrapper { max-width: 85vw; max-height: 85vh; display: flex; justify-content: center; align-items: center; }
+.artifact-modal-image-wrapper img { display: block; max-width: 100%; max-height: 80vh; object-fit: contain; }
+.artifact-modal-close { position: absolute; top: 0.5rem; right: 0.75rem; font-size: 1.5rem; line-height: 1; background: transparent; border: none; color: #4b5563; cursor: pointer; }
+.artifact-modal-close:hover { color: #111827; }

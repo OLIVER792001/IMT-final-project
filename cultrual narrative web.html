@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flows on Porcelain - Culture line</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#1E3A5F', gold: '#D4AF37' },
+            ceramic: { black: '#1A1A1A', white: '#F8F8F8', blue: '#1E3A5F', gray: '#666666', lightgray: '#E5E5E5' }
+          },
+          boxShadow: { soft: '0 18px 45px rgba(15,23,42,0.22)' }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style(css)/style.css?v=culture_full_v1">
+</head>
+
+<body class="font-sans text-gray-900 page-culture">
+
+  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-ceramic-black/90 backdrop-blur-sm shadow-lg py-4" id="mainNav">
+    <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+      <a href="Default layout.html" class="text-2xl font-serif font-bold text-ceramic-white text-shadow">Porcelain Witness</a>
+      
+      <div class="hidden md:flex space-x-8 items-center h-full">
+        <a href="index.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">HOME</a>
+        <a href="collections.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">COLLECTIONS</a>
+        
+        <div class="relative group h-full flex items-center cursor-pointer">
+          <span class="text-ceramic-white hover:text-ceramic-lightgray transition-colors flex items-center gap-1">
+            EXHIBITION <i class="fa fa-angle-down text-sm ml-1"></i>
+          </span>
+          <div class="nav-dropdown absolute top-full left-0 w-56 pt-2">
+              <div class="bg-ceramic-black/95 backdrop-blur-md shadow-2xl rounded-sm overflow-hidden border-t-2 border-ceramic-white/20">
+                <a href="timeline web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors border-b border-gray-700/30">Timeline Narrative</a>
+                <a href="technique narrative web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors border-b border-gray-700/30">Craft Narrative</a>
+                <a href="cultrual narrative web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors">Culture Narrative</a>
+              </div>
+          </div>
+        </div>
+        <a href="Aboutus.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">ABOUT US</a>
+        <button id="layoutToggle" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors flex items-center gap-2">
+          Choose Your Layout <i class="fa fa-chevron-down text-xs"></i>
+        </button>
+      </div>
+      <button class="md:hidden text-ceramic-white text-2xl" id="menuBtn"><i class="fa fa-bars"></i></button>
+    </div>
+    
+    <div class="md:hidden hidden bg-ceramic-black/95 absolute w-full" id="mobileMenu">
+        </div>
+  </nav>
+
+  <div class="layout-panel" id="layoutPanel">
+    <div class="layout-close text-ceramic-white hover:text-ceramic-lightgray" id="layoutClose">
+        <i class="fa fa-times text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif font-bold text-ceramic-white mb-6">Choose your layout</h3>
+    <p class="text-ceramic-lightgray mb-8 text-sm leading-relaxed">
+        Select a time period to change the website style across all pages.
+    </p>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1500 ~ 1650</h4>
+            <a href="#" data-theme="1500" class="layout-btn layout-btn-1500">Select Ming Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1650 ~ 1800</h4>
+            <a href="#" data-theme="1650" class="layout-btn layout-btn-1650">Select High Qing Style</a>
+        </div>
+    </div>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1800 ~ 1900</h4>
+            <a href="#" data-theme="1800" class="layout-btn layout-btn-1800">Select Late Qing Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1900 ~ 1990</h4>
+            <a href="#" data-theme="1900" class="layout-btn layout-btn-1850">Select Republic Style</a>
+        </div>
+    </div>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1990 ~ 2035</h4>
+            <a href="#" data-theme="1990" class="layout-btn layout-btn-1990">Select Modern Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">2035 ~ Future</h4>
+            <a href="#" data-theme="2035" class="layout-btn layout-btn-2035">Select Future Style</a>
+        </div>
+    </div>
+    
+    <div class="mt-4 pt-4 border-t border-white/10">
+        <a href="#" data-theme="default" class="text-sm text-ceramic-gray hover:text-white underline">Reset to Default Style</a>
+    </div>
+</div>
+
+   <main class="pt-20 md:pt-24 pb-16">
+ 
+  <section class="bg-transparent">
+    <div class="max-w-6xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-10">
+      <p class="text-xs tracking-[0.28em] uppercase text-gray-500 mb-2">Exhibition · Culture Narrative</p>
+      <h1 class="max-w-5xl font-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-blue mb-3 leading-snug">
+        Flows on Porcelain: <br>
+        <span class="text-xl md:text-2xl lg:text-3xl">Civilizations in Motion and the Making of a Global Imagination</span>
+      </h1>
+  
+      <div class="perspective-controls mb-6">
+        <button class="perspective-btn active" data-view="public">For Public</button>
+        <button class="perspective-btn" data-view="children">For Children</button>
+        <button class="perspective-btn" data-view="scholar">For Scholars</button>
+      </div>
+
+      <div class="max-w-8xl">
+        <div class="view-content view-public active">
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3">
+                From its origins, porcelain travelled across regions, absorbing, translating, and reshaping global visual languages. Through eight works spanning five centuries, this exhibition traces material importation, aesthetic adaptation, courtly hybrid painting, regional trade, urban consumption, political communication, and contemporary co-creation. Porcelain emerges as both a medium of dialogue and a maker of global imagination.
+            </p>
+        </div>
+        <div class="view-content view-children">
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3 font-medium">
+                Porcelain loves to travel! 🌍✈️ <br>
+                Just like you might bring back a souvenir from a trip, porcelain has been collecting patterns and colors from all over the world for 500 years. In this exhibition, we will see how Chinese porcelain made friends with ideas from Europe, Thailand, and beyond. It shows us that sharing ideas makes art even more beautiful!
+            </p>
+        </div>
+        <div class="view-content view-scholar">
+            <p class="text-sm md:text-base text-gray-800 leading-relaxed mb-3">
+                This narrative, 'Flows on Porcelain', investigates the transcultural agency of ceramic objects. By examining eight paradigmatic works, we map the trajectory of aesthetic hybridization—from the appropriation of Persian motifs to the synthesis of European enamel technologies. The exhibition argues that porcelain functions as a fluid semiotic surface, constantly negotiating between local production and global consumption networks.
+            </p>
+        </div>
+        <div class="mt-6 border-t border-gray-300"></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-6 md:py-10">
+      <figure class="mx-auto w-1/3 md:w-1/4 overflow-hidden">
+        <img src="asset/img/map_green_transparent.png" alt="Culture Narrative Map" class="w-full h-auto object-contain">
+      </figure>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item3.png" alt="Wucai Vase" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            Reinventing a Traveling Motif: <br> The Global Path of the Foreign Lotus
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Gourd-shaped vase (cat. no. 1)</p>
+          
+          <div class="view-content view-public active">
+            <p>The “foreign lotus” blends the Indian lotus with Persian arabesques and entered China via Indian Ocean trade. During the Jiajing-Wanli period, the opening of Macau and the Manila Galleon route facilitated the large-scale circulation of such motifs. Jingdezhen artisans reorganized these designs into symmetrical floral patterns, giving foreign forms a new aesthetic order in the Chinese context.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>A Flower's Journey 🌸</strong><br>This flower pattern didn't start in China! It travelled on ships all the way from India and Persia. The artists in China liked the curly leaves so much they added them to their own vases, creating a brand new style that everyone loved.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>The "Foreign Lotus" (Baoxianghua) serves as a case study in motif assimilation. Entering via maritime silk routes, its Persianate arabesque structure was systematized by Jingdezhen artisans during the Ming expansion. This represents a process of 'sinicization of the exotic', where foreign visual data is reorganized into a coherent Chinese decorative grammar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item8.png" alt="Yangcai Bowl" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            Material Encounters:<br> Importing and Recasting Enamel Technologies
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Yangcai Bowl (cat. no. 4)</p>
+          
+          <div class="view-content view-public active">
+            <p>In the Yongzheng period, European enamel pigments were introduced into the Forbidden City. The Imperial Workshops instructed Jingdezhen to experiment with new porcelain bodies so wares could accommodate Western light-and-shadow effects while preserving Chinese floral composition. This bowl exemplifies 'material importation and stylistic reconstruction'.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>New Colors from Far Away 🎨</strong><br>Visitors from Europe brought new, bright paints to the Emperor's palace. The Chinese potters were very clever and figured out how to use these new paints on their bowls. They mixed Western colors with Chinese flower drawings to make something totally unique.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>This Yangcai bowl signifies a technological transfer. The introduction of the colloidal gold (ruby) pigment and arsenic white (blanc-de-verre) from Europe allowed for tonal gradation previously impossible in wucai. The object embodies the Qing court's strategy of technological appropriation: utilizing Western materiality to enhance Chinese representational traditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item5.png" alt="Falangcai Bowl" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            A Visual Bilingualism: <br> Cross-Cultural Painting in the Imperial Court
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Vase with figure, flower and bird (cat. no. 6)</p>
+          
+          <div class="view-content view-public active">
+            <p>During the Qianlong reign, Western artists like Giuseppe Castiglione introduced linear perspective and light-and-shadow modeling. The imagery on the vessel becomes a form of 'visual bilingualism': Western principles of volumetric shaping placed alongside the poetic pictoriality of the Chinese tradition.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Speaking Two Art Languages 🗣️</strong><br>Imagine a painting that speaks two languages at once! This vase uses Chinese style for the background and a Western style (using light and shadow to make things look 3D) for the main picture. It shows how the Emperor liked to mix the best of both worlds.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>We term this aesthetic 'visual bilingualism'. The interaction between Jesuit painters and court artisans resulted in a hybrid style where Western chiaroscuro was applied to traditional Chinese subjects. This synthesis reflects the High Qing universalist ideology, encompassing both Eastern and Western epistemologies within the imperial gaze.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item9.png" alt="Snuff Bottle" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            A Cross-Cultural Lifestyle:<br> Snuff and Urban Aesthetic Reinvention
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Blue-and-White Snuff Bottle (cat. no. 7)</p>
+          
+          <div class="view-content view-public active">
+            <p>Snuff originated in Western medicinal culture and became localized as an object of connoisseurship for literati elites. In the late Qing, snuff bottles emerged as symbols of a cross-cultural lifestyle. They demonstrate the capacity of urban culture to absorb and transform foreign habits into aesthetic artifacts.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>A Cool New Fashion 🎩</strong><br>Taking snuff (a kind of powder) was a habit that came from Europe. But people in China made it their own by creating tiny, beautiful bottles to hold it. These bottles became like cool accessories or toys for grown-ups in the big cities.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>The snuff bottle represents the 'indigenization' of a foreign consumption practice. Originally a Western import, snuff taking was re-codified by the Chinese literati. The bottle itself became a site for micro-painting and collecting, illustrating how foreign commodities are stripped of their original context and re-embedded into local social hierarchies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item10.png" alt="Bencharong Jar" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            Regional Networks of Exchange: <br> Courtly Aesthetics in Siam
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Lai Nam Thong Covered Jars (cat. no. 8)</p>
+          
+          <div class="view-content view-public active">
+            <p>This export porcelain was commissioned by the Siamese (Thai) court. While its motifs derive from the Thai ceremonial system, the techniques were executed by Jingdezhen artisans. It embodies the bidirectional exchanges between China and Southeast Asia, where Chinese craftsmanship evolved to meet regional demands.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Made in China, Styled for Thailand 🐘</strong><br>The King of Thailand wanted special jars for his palace. He sent drawings of Thai gods and fire patterns to China. The Chinese potters made the jars exactly as asked. It’s a perfect mix of Chinese skill and Thai style!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>Bencharong ware ("Five Colors") illustrates the sophistication of intra-Asian trade networks. It is a product of precise customization: the form and iconography are strictly Thai (Thepanom figures), while the material production is Chinese. This reflects a 'shared courtly language' across East and Southeast Asia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item13.png" alt="Friendship Sculpture" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            Political Aesthetics in Porcelain: <br> The Visual Rhetoric of Socialist Internationalism
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: 'China-Central Asia Friendship' (cat. no. 12)</p>
+          
+          <div class="view-content view-public active">
+            <p>During the Cold War, China used art to forge political symbolism with Central Asian countries. This sculpture embodies socialist internationalism: the youths' poses emphasize 'unity' and 'friendship'. Porcelain functions here as an instrument of political communication.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Statues of Friendship 🤝</strong><br>Art can be used to make friends! This statue shows young people from different countries standing together happily. It was made to show that China wanted to be good friends with its neighbors.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>In the mid-20th century, porcelain was mobilized for diplomatic propaganda. This sculpture utilizes the visual lexicon of Socialist Realism—heroic poses, dynamic composition—to articulate the geopolitics of the Cold War. It transforms the ceramic medium into a vehicle for state ideology and internationalist rhetoric.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-4 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item15.jpeg" alt="ELICA Studio Work" class="w-full h-full object-cover">
+        </figure>
+        <div class="space-y-2 text-xs md:text-sm leading-relaxed">
+          <h2 class="font-serif text-sm md:text-2xl font-semibold text-brand-black mb-1">
+            Contemporary Co-Creation: <br> From Export Trade to Collaborative Practice
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Narrative Ceramics by ELICA (cat. no. 14)</p>
+          
+          <div class="view-content view-public active">
+            <p>This installation represents a new paradigm of collaboration. Unlike the export model of earlier centuries, this work emerges from horizontal, reciprocal creation. ELICA Studio draws on the Italian “istoriato” tradition and engages with Jingdezhen's porcelain heritage, producing a genuinely global co-creation.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Working Together Today 🌍</strong><br>Today, artists don't just buy and sell; they work together! Italian artists and Chinese potters teamed up to make these funny and beautiful plates. It shows that when we share our stories, we can make something brand new.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>The ELICA project marks a shift from 'commission' to 'co-creation'. It synthesizes Italian Renaissance narrative ceramics (Majolica/Istoriato) with contemporary Jingdezhen craftsmanship. This reflects the modern condition of 'Drifting Existence', where cultural identity is fluid, and production is a dialogic process rather than a linear transaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech-epilogue" class="mt-12 md:mt-16 border-t border-gray-200 bg-transparent">
+    <div class="max-w-5xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-10">
+      <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-3">
+        Cultural Exchange Epilogue · Mapping Encounters Across Surfaces
+      </h2>
+      <div class="view-content view-public active">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-2">
+            The cross-cultural journey of porcelain has never ceased. Whether through material adaptation, visual reinvention, or contemporary collaboration, porcelain remains an open medium for global exchange. It records the movement of civilizations and reminds us that culture is never linear, but continually reshaped through encounter.
+        </p>
+      </div>
+      <div class="view-content view-children">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-2">
+            <strong>The Journey Continues... 🚀</strong><br>
+            Porcelain has been traveling for hundreds of years, and it's still going! Every cup or plate tells a story about people meeting and sharing ideas. What story will you tell with art?
+        </p>
+      </div>
+      <div class="view-content view-scholar">
+        <p class="text-sm md:text-base text-gray-800 leading-relaxed mb-2">
+            In conclusion, porcelain acts as a material archive of globalization. It does not merely reflect history; it constitutes it through the circulation of signs and techniques. This 'Culture Line' demonstrates that authenticity in ceramic art is not about purity, but about the resilience of the medium to absorb, translate, and preserve diverse cultural memories.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-4 md:px-5 lg:px-6 pb-4">
+    <p class="text-xs md:text-sm text-gray-500 text-center">
+      <a href="collections.html" class="underline hover:text-brand-blue">click here to see all the collections</a>
+    </p>
+  </div>
+
+</main>
+
+  <footer class="bg-black text-ceramic-white py-12">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-8 md:mb-0">
+          <h3 class="text-2xl font-serif font-bold mb-2">Porcelain Witness</h3>
+          <p class="text-ceramic-gray">Five Centuries of China and the World</p>
+        </div>
+      </div>
+      <div class="border-t border-ceramic-gray/30 mt-8 pt-8 text-center text-ceramic-gray">
+        <p>Authored by UNIBO DHDK. Members: Yuming Lian, Xinyi Guo, Yutong Li</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="artifact-modal" id="artifactModal" aria-hidden="true">
+    <div class="artifact-modal-backdrop"></div>
+    <div class="artifact-modal-content" role="dialog" aria-modal="true">
+      <button class="artifact-modal-close" type="button" aria-label="Close">&times;</button>
+      <div class="artifact-modal-image-wrapper">
+        <img id="artifactModalImage" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="script/js/script.js?v=culture_full_v1"></script>
+
+</body>
+</html>

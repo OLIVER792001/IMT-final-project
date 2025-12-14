@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Porcelain Witness</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ceramic: {
+                            black: '#121212', card: '#1A1A1A', white: '#F8F8F8',
+                            blue: '#1E3A5F', gray: '#888888', gold: '#C5A065', divider: '#333333'
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style(css)/style.css?v=collections_final_v2">
+</head>
+
+<body class="bg-ceramic-black text-ceramic-white font-sans min-h-screen flex flex-col">
+
+    <nav class="fixed top-0 left-0 w-full z-40 bg-ceramic-black/90 backdrop-blur-sm border-b border-white/10" id="mainNav">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-ceramic-white">Porcelain Witness</a>
+            
+            <div class="hidden md:flex space-x-8 items-center h-full">
+                <a href="index.html" class="text-ceramic-gray hover:text-ceramic-white transition-colors">HOME</a>
+                <a href="collections.html" class="text-ceramic-white font-bold border-b border-ceramic-white pb-1">COLLECTIONS</a>
+                
+                <div class="relative group h-full flex items-center cursor-pointer">
+                    <span class="text-ceramic-gray hover:text-ceramic-white transition-colors flex items-center gap-1">
+                        EXHIBITION <i class="fa fa-angle-down text-sm ml-1"></i>
+                    </span>
+                    <div class="nav-dropdown absolute top-full left-0 w-56 pt-4">
+                        <div class="bg-ceramic-card/95 backdrop-blur-md shadow-2xl rounded-sm overflow-hidden border border-white/10">
+                            <a href="timeline web.html" class="block px-6 py-3 text-sm text-ceramic-gray hover:bg-white/10 hover:text-ceramic-white transition-colors border-b border-white/5">Timeline Narrative</a>
+                            <a href="technique narrative web.html" class="block px-6 py-3 text-sm text-ceramic-gray hover:bg-white/10 hover:text-ceramic-white transition-colors border-b border-white/5">Craft Narrative</a>
+                            <a href="culture narrative web.html" class="block px-6 py-3 text-sm text-ceramic-gray hover:bg-white/10 hover:text-ceramic-white transition-colors">Culture Narrative</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Aboutus.html" class="text-ceramic-gray hover:text-ceramic-white transition-colors">ABOUT US</a>
+                <button id="layoutToggle" class="text-ceramic-gray hover:text-ceramic-white transition-colors flex items-center gap-2 ml-4">
+                    Choose Your Layout <i class="fa fa-chevron-down text-xs"></i>
+                </button>
+            </div>
+            
+            <button class="md:hidden text-ceramic-white text-2xl" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="md:hidden hidden bg-ceramic-card border-b border-white/10 absolute w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-ceramic-gray hover:text-ceramic-white py-2 border-b border-white/5">HOME</a>
+                <a href="collections.html" class="text-ceramic-white font-bold py-2 border-b border-white/5">COLLECTIONS</a>
+                <div class="border-b border-white/5 pb-2">
+                    <span class="text-ceramic-gray block py-2 font-medium">EXHIBITION</span>
+                    <div class="flex flex-col pl-4 space-y-2 mt-1">
+                        <a href="timeline web.html" class="text-ceramic-gray/70 text-sm hover:text-ceramic-white">Timeline Narrative</a>
+                        <a href="technique narrative web.html" class="text-ceramic-gray/70 text-sm hover:text-ceramic-white">Craft Narrative</a>
+                        <a href="culture narrative web.html" class="text-ceramic-gray/70 text-sm hover:text-ceramic-white">Culture Narrative</a>
+                    </div>
+                </div>
+                <a href="Aboutus.html" class="text-ceramic-gray hover:text-ceramic-white py-2 border-b border-white/5">ABOUT US</a>
+                <button id="mobileLayoutToggle" class="text-ceramic-white py-2 border-b border-ceramic-gray/30 text-left w-full">
+                    Choose Your Layout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-panel" id="layoutPanel">
+        <div class="layout-close text-ceramic-white hover:text-ceramic-lightgray" id="layoutClose">
+            <i class="fa fa-times text-xl"></i>
+        </div>
+        <h3 class="text-xl font-serif font-bold text-ceramic-white mb-6">Choose your layout</h3>
+        <p class="text-ceramic-lightgray mb-8 text-sm leading-relaxed">
+            Select a time period to change the website style across all pages.
+        </p>
+        
+        <div class="layout-row">
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1500 ~ 1650</h4>
+                <a href="#" data-theme="1500" class="layout-btn layout-btn-1500">Select Ming Style</a>
+            </div>
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1650 ~ 1800</h4>
+                <a href="#" data-theme="1650" class="layout-btn layout-btn-1650">Select High Qing Style</a>
+            </div>
+        </div>
+        
+        <div class="layout-row">
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1800 ~ 1900</h4>
+                <a href="#" data-theme="1800" class="layout-btn layout-btn-1800">Select Late Qing Style</a>
+            </div>
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1900 ~ 1990</h4>
+                <a href="#" data-theme="1900" class="layout-btn layout-btn-1850">Select Republic Style</a>
+            </div>
+        </div>
+        
+        <div class="layout-row">
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1990 ~ 2035</h4>
+                <a href="#" data-theme="1990" class="layout-btn layout-btn-1990">Select Modern Style</a>
+            </div>
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">2035 ~ Future</h4>
+                <a href="#" data-theme="2035" class="layout-btn layout-btn-2035">Select Future Style</a>
+            </div>
+        </div>
+        
+        <div class="mt-4 pt-4 border-t border-white/10">
+            <a href="#" data-theme="default" class="text-sm text-ceramic-gray hover:text-white underline">Reset to Default Style</a>
+        </div>
+    </div>
+
+    <header class="pt-32 pb-16 text-center px-4">
+        <h1 class="text-5xl md:text-6xl font-serif text-ceramic-white mb-6">The Collection</h1>
+        <div class="flex justify-center flex-wrap gap-4 text-ceramic-gray font-serif text-lg">
+            <button onclick="filterItems(1, 6, this)" class="filter-btn hover:text-ceramic-gold transition-colors">1500s ~ 1800s</button>
+            <span class="text-ceramic-divider">|</span>
+            <button onclick="filterItems(7, 12, this)" class="filter-btn hover:text-ceramic-gold transition-colors">1800s ~ 1990s</button>
+            <span class="text-ceramic-divider">|</span>
+            <button onclick="filterItems(13, 18, this)" class="filter-btn hover:text-ceramic-gold transition-colors">1990s ~ Future</button>
+            <span class="text-ceramic-divider">|</span>
+            <button onclick="filterItems(1, 18, this)" class="filter-btn hover:text-ceramic-gold transition-colors active">View All</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-8 mb-24 flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-b border-ceramic-divider" id="collectionGrid">
+            </div>
+    </main>
+
+    <div id="detailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/90 backdrop-blur-md p-4 overflow-y-auto">
+        <button onclick="closeDetailModal()" class="absolute top-6 right-6 text-white hover:text-ceramic-gold text-4xl z-50">&times;</button>
+
+        <div class="bg-ceramic-card w-full max-w-6xl rounded-lg overflow-hidden shadow-2xl flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[80vh] border border-white/10 relative modal-content">
+            
+            <div class="lg:w-1/2 bg-black flex items-center justify-center p-8 relative">
+                <img id="modalImg" src="" alt="Detail" class="max-h-[60vh] lg:max-h-full object-contain shadow-lg hidden">
+                <video id="modalVideo" src="" class="max-h-[60vh] lg:max-h-full object-contain shadow-lg hidden" controls loop playsinline></video>
+            </div>
+
+            <div class="lg:w-1/2 p-8 lg:p-12 overflow-y-auto custom-scrollbar">
+                <h2 id="modalTitle" class="text-3xl font-serif text-ceramic-gold mb-8 border-b border-white/10 pb-4"></h2>
+                
+                <table class="w-full text-left border-collapse">
+                    <tbody class="text-sm md:text-base">
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray w-1/3">Title</td><td class="py-3 text-ceramic-white" id="metaTitle"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray">Author</td><td class="py-3 text-ceramic-white" id="metaAuthor"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray">Subject</td><td class="py-3 text-ceramic-white" id="metaSubject"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray align-top">Description</td><td class="py-3 text-ceramic-white leading-relaxed text-sm opacity-90" id="metaDescription"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray">Date</td><td class="py-3 text-ceramic-white" id="metaDate"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray">Type</td><td class="py-3 text-ceramic-white" id="metaType"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray">Size</td><td class="py-3 text-ceramic-white" id="metaDimension"></td></tr>
+                        <tr class="border-b border-white/5"><td class="py-3 font-bold text-ceramic-gray">Place</td><td class="py-3 text-ceramic-white" id="metaPlace"></td></tr>
+                        <tr><td class="py-3 font-bold text-ceramic-gray">Source</td><td class="py-3 text-ceramic-white break-all"><a href="#" id="metaSource" class="text-blue-400 hover:text-blue-300" target="_blank">Link</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black text-ceramic-white py-12 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-serif font-bold mb-2">Porcelain Witness</h3>
+            <p class="text-ceramic-gray text-sm">Five Centuries of China and the World</p>
+        </div>
+    </footer>
+
+    <script src="script/js/script.js?v=collections_final_v2"></script>
+</body>
+</html>

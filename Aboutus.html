@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Porcelain Witness</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ceramic: {
+                            black: '#121212', card: '#1A1A1A', white: '#F8F8F8',
+                            blue: '#1E3A5F', gray: '#888888', gold: '#C5A065', divider: '#333333'
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style(css)/style.css?v=about_final_v2">
+</head>
+
+<body class="bg-ceramic-black text-ceramic-white font-sans min-h-screen flex flex-col selection:bg-ceramic-gold selection:text-black">
+
+    <nav class="fixed top-0 left-0 w-full z-40 bg-ceramic-black/90 backdrop-blur-sm border-b border-white/10" id="mainNav">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-ceramic-white">Porcelain Witness</a>
+            
+            <div class="hidden md:flex space-x-8 items-center h-full">
+                <a href="index.html" class="text-ceramic-gray hover:text-ceramic-white transition-colors">HOME</a>
+                <a href="collections.html" class="text-ceramic-gray hover:text-ceramic-white transition-colors">COLLECTIONS</a>
+                
+                <div class="relative group h-full flex items-center cursor-pointer">
+                    <span class="text-ceramic-gray hover:text-ceramic-white transition-colors flex items-center gap-1">
+                        EXHIBITION <i class="fa fa-angle-down text-sm ml-1"></i>
+                    </span>
+                    <div class="nav-dropdown absolute top-full left-0 w-56 pt-4">
+                        <div class="bg-ceramic-card/95 backdrop-blur-md shadow-2xl rounded-sm overflow-hidden border border-white/10">
+                            <a href="timeline web.html" class="block px-6 py-3 text-sm text-ceramic-gray hover:bg-white/10 hover:text-ceramic-white transition-colors border-b border-white/5">Timeline Narrative</a>
+                            <a href="technique narrative web.html" class="block px-6 py-3 text-sm text-ceramic-gray hover:bg-white/10 hover:text-ceramic-white transition-colors border-b border-white/5">Craft Narrative</a>
+                            <a href="culture narrative web.html" class="block px-6 py-3 text-sm text-ceramic-gray hover:bg-white/10 hover:text-ceramic-white transition-colors">Culture Narrative</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Aboutus.html" class="text-ceramic-white font-bold border-b border-ceramic-white pb-1">ABOUT US</a>
+                <button id="layoutToggle" class="text-ceramic-gray hover:text-ceramic-white transition-colors flex items-center gap-2 ml-4">
+                    Choose Your Layout <i class="fa fa-chevron-down text-xs"></i>
+                </button>
+            </div>
+            
+            <button class="md:hidden text-ceramic-white text-2xl" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="md:hidden hidden bg-ceramic-card border-b border-white/10 absolute w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-ceramic-gray hover:text-ceramic-white py-2 border-b border-white/5">HOME</a>
+                <a href="collections.html" class="text-ceramic-gray hover:text-ceramic-white py-2 border-b border-white/5">COLLECTIONS</a>
+                
+                <div class="border-b border-white/5 pb-2">
+                    <span class="text-ceramic-gray block py-2 font-medium">EXHIBITION</span>
+                    <div class="flex flex-col pl-4 space-y-2 mt-1">
+                        <a href="timeline web.html" class="text-ceramic-gray/70 text-sm hover:text-ceramic-white">Timeline Narrative</a>
+                        <a href="technique narrative web.html" class="text-ceramic-gray/70 text-sm hover:text-ceramic-white">Craft Narrative</a>
+                        <a href="culture narrative web.html" class="text-ceramic-gray/70 text-sm hover:text-ceramic-white">Culture Narrative</a>
+                    </div>
+                </div>
+
+                <a href="Aboutus.html" class="text-ceramic-white font-bold py-2 border-b border-white/5">ABOUT US</a>
+                <button id="mobileLayoutToggle" class="text-ceramic-white py-2 border-b border-ceramic-gray/30 text-left w-full">
+                    Choose Your Layout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-panel" id="layoutPanel">
+        <div class="layout-close text-ceramic-white hover:text-ceramic-lightgray" id="layoutClose">
+            <i class="fa fa-times text-xl"></i>
+        </div>
+        <h3 class="text-xl font-serif font-bold text-ceramic-white mb-6">Choose your layout</h3>
+        <p class="text-ceramic-lightgray mb-8 text-sm leading-relaxed">
+            Select a time period to change the website style across all pages.
+        </p>
+        
+        <div class="layout-row">
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1500 ~ 1650</h4>
+                <a href="#" data-theme="1500" class="layout-btn layout-btn-1500">Select Ming Style</a>
+            </div>
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1650 ~ 1800</h4>
+                <a href="#" data-theme="1650" class="layout-btn layout-btn-1650">Select High Qing Style</a>
+            </div>
+        </div>
+        
+        <div class="layout-row">
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1800 ~ 1900</h4>
+                <a href="#" data-theme="1800" class="layout-btn layout-btn-1800">Select Late Qing Style</a>
+            </div>
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1900 ~ 1990</h4>
+                <a href="#" data-theme="1900" class="layout-btn layout-btn-1850">Select Republic Style</a>
+            </div>
+        </div>
+        
+        <div class="layout-row">
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">1990 ~ 2035</h4>
+                <a href="#" data-theme="1990" class="layout-btn layout-btn-1990">Select Modern Style</a>
+            </div>
+            <div class="layout-item">
+                <h4 class="text-lg font-medium text-ceramic-white mb-4">2035 ~ Future</h4>
+                <a href="#" data-theme="2035" class="layout-btn layout-btn-2035">Select Future Style</a>
+            </div>
+        </div>
+        
+        <div class="mt-4 pt-4 border-t border-white/10">
+            <a href="#" data-theme="default" class="text-sm text-ceramic-gray hover:text-white underline">Reset to Default Style</a>
+        </div>
+    </div>
+
+    <main class="pt-32 pb-24 px-6 md:px-12">
+        
+        <div class="max-w-4xl mx-auto text-center mb-24 fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-serif text-ceramic-white mb-6">About This Project</h1>
+            <p class="text-ceramic-gold font-serif italic text-xl">Information Modeling and Web Technology</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-16 fade-in-up" style="animation-delay: 0.1s;">
+            <section>
+                <h2 class="text-xs font-bold tracking-[0.2em] text-ceramic-gray uppercase mb-6 border-b border-ceramic-divider pb-2">Project Background</h2>
+                <p class="text-lg md:text-xl text-ceramic-white leading-relaxed font-light">
+                    This website was created as the final project for the course 
+                    <strong class="text-ceramic-gold font-normal">Information Modeling and Web Technology</strong> (A.Y. 2024/2025), part of the 
+                    Master's Degree Programme in <em>Digital Humanities and Digital Knowledge</em> 
+                    at the University of Bologna.
+                </p>
+                <p class="mt-4 text-ceramic-gray leading-relaxed">
+                    The course is taught by <strong>Prof. Fabio Vitali</strong> and follows the framework called 
+                    <strong>MMMM (Multimedia Museum Meta Mirror)</strong>, a model for exploring how narratives, 
+                    metadata and web technologies can support digital cultural experiences.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-xs font-bold tracking-[0.2em] text-ceramic-gray uppercase mb-6 border-b border-ceramic-divider pb-2">Exhibition Theme</h2>
+                <h3 class="text-3xl font-serif text-ceramic-white mb-6">Porcelain Witness</h3>
+                <p class="text-lg text-ceramic-white leading-relaxed font-light mb-4">
+                    <em>Porcelain Witness</em> presents a virtual journey through five centuries of Chinese porcelain. 
+                    Using eighteen carefully selected objects, the exhibition forms a historical corridor that spans from the Ming dynasty to the present.
+                </p>
+                <p class="text-ceramic-gray leading-relaxed">
+                    These works show how porcelain has functioned as a diplomatic gift, a global trade commodity, 
+                    an artistic medium and, in recent years, a bridge between material craft and digital culture.
+                </p>
+            </section>
+        </div>
+
+        <div class="max-w-5xl mx-auto mt-24 fade-in-up" style="animation-delay: 0.2s;">
+            <h2 class="text-center text-xs font-bold tracking-[0.2em] text-ceramic-gray uppercase mb-12">Key Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 border border-white/5 hover:border-ceramic-gold/30 hover:bg-white/5 transition-all duration-500">
+                    <span class="text-ceramic-gold text-4xl mb-4 block opacity-50">01</span>
+                    <h3 class="text-xl font-serif text-ceramic-white mb-3">Narrative-Driven Experience</h3>
+                    <p class="text-ceramic-gray text-sm leading-relaxed">
+                        Three distinct routes: <strong>Historical Timeline</strong>, <strong>Cultural Exchange</strong>, and <strong>Craft Evolution</strong>. 
+                        Switching between them enables multiple ways of experiencing the same collection.
+                    </p>
+                </div>
+                <div class="p-8 border border-white/5 hover:border-ceramic-gold/30 hover:bg-white/5 transition-all duration-500">
+                    <span class="text-ceramic-gold text-4xl mb-4 block opacity-50">02</span>
+                    <h3 class="text-xl font-serif text-ceramic-white mb-3">Narrative-Adaptive Texts</h3>
+                    <p class="text-ceramic-gray text-sm leading-relaxed">
+                        Each route generates its own focus, tone and degree of depth, allowing interpretive content to shift naturally across different storylines.
+                    </p>
+                </div>
+                <div class="p-8 border border-white/5 hover:border-ceramic-gold/30 hover:bg-white/5 transition-all duration-500">
+                    <span class="text-ceramic-gold text-4xl mb-4 block opacity-50">03</span>
+                    <h3 class="text-xl font-serif text-ceramic-white mb-3">Six Visual Themes</h3>
+                    <p class="text-ceramic-gray text-sm leading-relaxed">
+                        Typography, colour palettes and layout structures change with the selected theme, reinforcing the distinct atmosphere of each narrative path.
+                    </p>
+                </div>
+                <div class="p-8 border border-white/5 hover:border-ceramic-gold/30 hover:bg-white/5 transition-all duration-500">
+                    <span class="text-ceramic-gold text-4xl mb-4 block opacity-50">04</span>
+                    <h3 class="text-xl font-serif text-ceramic-white mb-3">Immersive Spatial Guidance</h3>
+                    <p class="text-ceramic-gray text-sm leading-relaxed">
+                        A fictional but plausible museum floor plan highlights the optimal sequence of galleries, creating a coherent movement through space and story.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-32 space-y-16 fade-in-up" style="animation-delay: 0.3s;">
+            <section class="text-center">
+                <h2 class="text-xs font-bold tracking-[0.2em] text-ceramic-gray uppercase mb-8">Design Team</h2>
+                <div class="space-y-4">
+                    <div class="group"><p class="text-xl font-serif text-ceramic-white">Yuming Lian</p><p class="text-sm text-ceramic-gray font-mono group-hover:text-ceramic-gold transition-colors">yuming.lian@studio.unibo.it</p></div>
+                    <div class="group"><p class="text-xl font-serif text-ceramic-white">Xinyi Guo</p><p class="text-sm text-ceramic-gray font-mono group-hover:text-ceramic-gold transition-colors">xinyi.guo@studio.unibo.it</p></div>
+                    <div class="group"><p class="text-xl font-serif text-ceramic-white">Yutong Li</p><p class="text-sm text-ceramic-gray font-mono group-hover:text-ceramic-gold transition-colors">yutong.li2@studio.unibo.it</p></div>
+                </div>
+            </section>
+
+            <section class="text-center border-t border-white/5 pt-12">
+                <h2 class="text-xs font-bold tracking-[0.2em] text-ceramic-gray uppercase mb-4">Technical Implementation</h2>
+                <p class="text-ceramic-white font-light">Built using semantic HTML, CSS, and modular JavaScript ensuring clarity, accessibility and a clean structural foundation.</p>
+            </section>
+
+            <section class="border-t border-white/5 pt-12 text-sm text-ceramic-gray leading-relaxed space-y-8">
+                <div>
+                    <h3 class="text-white mb-2 font-medium">Copyright and Acknowledgements</h3>
+                    <p>This website was developed exclusively for the <em>Information Modeling and Web Technology</em> course as an academic project.</p>
+                </div>
+                <div>
+                    <h3 class="text-white mb-2 font-medium">Primary Content Sources</h3>
+                    <ul class="list-none space-y-1 font-mono text-xs opacity-80">
+                        <li>National Palace Museum Digital Archive: https://digitalarchive.npm.gov.tw/</li>
+                        <li>The Palace Museum: https://intl.dpm.org.cn/</li>
+                        <li>Jingdezhen China Ceramics Museum: http://tcg.jdzol.net/</li>
+                        <li>SuperRare Digital Art Gallery: https://superrare.com/</li>
+                        <li>OpenSea NFT Marketplace: https://opensea.io/</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-white/5 rounded border border-white/5">
+                    <strong class="text-ceramic-gold block mb-1">Disclaimer</strong>
+                    The textual and visual materials on this site are organised around three fictional curatorial narratives. They are selected from academic sources, museum databases and open-access platforms for educational use.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-black text-ceramic-white py-12 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-serif font-bold mb-2">Porcelain Witness</h3>
+            <p class="text-ceramic-gray text-sm">Five Centuries of China and the World</p>
+            <div class="mt-8 text-xs text-ceramic-gray/50 font-mono">© 2025 UNIBO DHDK Team</div>
+        </div>
+    </footer>
+
+    <script src="script/js/script.js?v=about_final_v2"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* style(css)/style-1500.css */
+@import url("style.css");
+
+/* 1. 全局纹理与色调 (模拟宣纸) */
+body {
+    /* 使用 CSS 渐变模拟纸张纹理，无需外部图片 */
+    background-color: #fdfbf7 !important;
+    background-image: repeating-linear-gradient(45deg, #fdfbf7 0, #fdfbf7 2px, #f4efe6 2px, #f4efe6 4px) !important;
+    color: #2c3e50 !important;
+    font-family: "Noto Serif SC", "Times New Roman", serif !important;
+}
+
+/* 2. 导航栏 (深蓝釉色) */
+#mainNav {
+    background-color: rgba(22, 46, 88, 0.95) !important; /* 钴蓝 */
+    border-bottom: 4px double #d4af37 !important; /* 双金线 */
+    box-shadow: 0 4px 20px rgba(22, 46, 88, 0.3) !important;
+}
+#mainNav a {
+    font-family: serif !important;
+    letter-spacing: 0.1em;
+}
+
+/* 3. 标题与文字 (水墨感) */
+h1, h2, h3 {
+    color: #162e58 !important; /* 青花蓝 */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+}
+.text-ceramic-gray { color: #5d5d5d !important; }
+
+/* 4. 卡片与容器 (古籍边框风格) */
+.collection-item, .exhibition-card, .rounded-2xl {
+    background-color: #fffcf5 !important;
+    border: 1px solid #162e58 !important;
+    border-radius: 2px !important; /* 方正 */
+    box-shadow: 8px 8px 0px rgba(22, 46, 88, 0.1) !important; /* 硬阴影 */
+    position: relative;
+}
+/* 给卡片加内边框装饰 */
+.collection-item::after, .exhibition-card::after {
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px; right: 4px; bottom: 4px;
+    border: 1px solid rgba(22, 46, 88, 0.3);
+    pointer-events: none;
+}
+
+/* 5. 按钮 (印章风格) */
+.perspective-btn, .layout-btn, .filter-btn {
+    border: 2px solid #8b2e2e !important; /* 印泥红 */
+    color: #8b2e2e !important;
+    background: transparent !important;
+    font-family: serif;
+    border-radius: 4px !important;
+}
+.perspective-btn.active, .filter-btn.active, .layout-btn:hover {
+    background-color: #8b2e2e !important;
+    color: #fffcf5 !important;
+}
+
+/* 6. Timeline 特殊处理 */
+.timeline-line { background: #162e58 !important; width: 3px !important; }
+.timeline-dot { border-color: #162e58 !important; background: #fffcf5 !important; }
+.timeline-step.timeline-active .timeline-dot { background: #8b2e2e !important; }

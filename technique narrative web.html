@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Soul of Craft – Technique Line</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#1E3A5F', gold: '#D4AF37' },
+            ceramic: { black: '#1A1A1A', white: '#F8F8F8', blue: '#1E3A5F', gray: '#666666', lightgray: '#E5E5E5' }
+          },
+          boxShadow: { soft: '0 18px 45px rgba(15,23,42,0.22)' }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style(css)/style.css?v=technique_final">
+</head>
+
+<body class="font-sans text-gray-900 page-culture">
+
+  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-ceramic-black/90 backdrop-blur-sm shadow-lg py-4" id="mainNav">
+    <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+      <a href="Default layout.html" class="text-2xl font-serif font-bold text-ceramic-white text-shadow">Porcelain Witness</a>
+      
+      <div class="hidden md:flex space-x-8 items-center h-full">
+        <a href="index.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">HOME</a>
+        <a href="collections.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">COLLECTIONS</a>
+        
+        <div class="relative group h-full flex items-center cursor-pointer">
+          <span class="text-ceramic-white hover:text-ceramic-lightgray transition-colors flex items-center gap-1">
+            EXHIBITION <i class="fa fa-angle-down text-sm ml-1"></i>
+          </span>
+          <div class="nav-dropdown absolute top-full left-0 w-56 pt-2">
+              <div class="bg-ceramic-black/95 backdrop-blur-md shadow-2xl rounded-sm overflow-hidden border-t-2 border-ceramic-white/20">
+                <a href="timeline web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors border-b border-gray-700/30">Timeline Narrative</a>
+                <a href="technique narrative web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors border-b border-gray-700/30">Craft Narrative</a>
+                <a href="cultrual narrative web.html" class="block px-6 py-3 text-sm text-ceramic-white hover:bg-white/10 hover:text-white transition-colors">Culture Narrative</a>
+              </div>
+          </div>
+        </div>
+        <a href="Aboutus.html" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors">ABOUT US</a>
+        <button id="layoutToggle" class="text-ceramic-white hover:text-ceramic-lightgray transition-colors flex items-center gap-2">
+          Choose Your Layout <i class="fa fa-chevron-down text-xs"></i>
+        </button>
+      </div>
+      <button class="md:hidden text-ceramic-white text-2xl" id="menuBtn"><i class="fa fa-bars"></i></button>
+    </div>
+    
+    <div class="md:hidden hidden bg-ceramic-black/95 absolute w-full" id="mobileMenu">
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <a href="Default layout.html" class="text-ceramic-white hover:text-ceramic-lightgray py-2 border-b border-ceramic-gray/30">HOME</a>
+            <a href="collections.html" class="text-ceramic-white hover:text-ceramic-lightgray py-2 border-b border-ceramic-gray/30">COLLECTIONS</a>
+            <div class="border-b border-ceramic-gray/30 pb-2">
+                <span class="text-ceramic-white block py-2 font-medium">EXHIBITION</span>
+                <div class="flex flex-col pl-4 space-y-2 mt-1">
+                    <a href="timeline web.html" class="text-ceramic-gray text-sm hover:text-ceramic-white">Timeline Narrative</a>
+                    <a href="technique narrative web.html" class="text-ceramic-gray text-sm hover:text-ceramic-white">Craft Narrative</a>
+                    <a href="culture narrative web.html" class="text-ceramic-gray text-sm hover:text-ceramic-white">Culture Narrative</a>
+                </div>
+            </div>
+            <a href="Aboutus.html" class="text-ceramic-white hover:text-ceramic-lightgray py-2 border-b border-ceramic-gray/30">ABOUT US</a>
+            <button id="mobileLayoutToggle" class="text-ceramic-white py-2 border-b border-ceramic-gray/30 text-left w-full">Choose Your Layout</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="layout-panel" id="layoutPanel">
+    <div class="layout-close text-ceramic-white hover:text-ceramic-lightgray" id="layoutClose">
+        <i class="fa fa-times text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif font-bold text-ceramic-white mb-6">Choose your layout</h3>
+    <p class="text-ceramic-lightgray mb-8 text-sm leading-relaxed">
+        Select a time period to change the website style across all pages.
+    </p>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1500 ~ 1650</h4>
+            <a href="#" data-theme="1500" class="layout-btn layout-btn-1500">Select Ming Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1650 ~ 1800</h4>
+            <a href="#" data-theme="1650" class="layout-btn layout-btn-1650">Select High Qing Style</a>
+        </div>
+    </div>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1800 ~ 1900</h4>
+            <a href="#" data-theme="1800" class="layout-btn layout-btn-1800">Select Late Qing Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1900 ~ 1990</h4>
+            <a href="#" data-theme="1900" class="layout-btn layout-btn-1850">Select Republic Style</a>
+        </div>
+    </div>
+    
+    <div class="layout-row">
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">1990 ~ 2035</h4>
+            <a href="#" data-theme="1990" class="layout-btn layout-btn-1990">Select Modern Style</a>
+        </div>
+        <div class="layout-item">
+            <h4 class="text-lg font-medium text-ceramic-white mb-4">2035 ~ Future</h4>
+            <a href="#" data-theme="2035" class="layout-btn layout-btn-2035">Select Future Style</a>
+        </div>
+    </div>
+    
+    <div class="mt-4 pt-4 border-t border-white/10">
+        <a href="#" data-theme="default" class="text-sm text-ceramic-gray hover:text-white underline">Reset to Default Style</a>
+    </div>
+</div>
+  
+
+  <div id="exhibition1"></div>
+
+  <main class="pt-20 md:pt-24 pb-16">
+ 
+  <section class="bg-transparent">
+    <div class="max-w-6xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-10">
+      <p class="text-xs tracking-[0.28em] uppercase text-gray-500 mb-2">Exhibition · Crafts Narrative</p>
+      <h1 class="max-w-5xl font-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-blue mb-3 leading-snug">
+        The Soul of Craft: <br>
+        Seven Centuries of Jingdezhen's Technical Artistry
+      </h1>
+  
+      <div class="perspective-controls mb-6">
+        <button class="perspective-btn active" data-view="public">For Public</button>
+        <button class="perspective-btn" data-view="children">For Children</button>
+        <button class="perspective-btn" data-view="scholar">For Scholars</button>
+      </div>
+
+      <div class="max-w-8xl">
+        <div class="view-content view-public active">
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3">
+              This exhibition returns to the essence of ceramic art: the making itself. Through seven pivotal techniques, it traces how generations of Jingdezhen artisans transformed clay and fire into enduring artistry, turning technique into an aesthetic language of its own. Each method reshaped the look and meaning of porcelain, responding to the cultural, social, and political forces of its time.
+            </p>
+        </div>
+        <div class="view-content view-children">
+            <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3 font-medium">
+                Magic with Clay and Fire! 🔥⚱️ <br>
+                How do lumps of mud turn into shiny, beautiful bowls? It's like magic, but it's actually science and art! In this tour, we will see 7 secret tricks (techniques) that potters in China used over 700 years to make their porcelain stronger, thinner, and more colorful. Let's see how they did it!
+            </p>
+        </div>
+        <div class="view-content view-scholar">
+            <p class="text-sm md:text-base text-gray-800 leading-relaxed mb-3">
+                Technique is ontology. This narrative deconstructs the history of Jingdezhen through the lens of 'technical objects' (Simondon). By isolating seven critical advancements—from cobalt application to high-temperature reduction firing—we examine how material constraints and innovations dictated aesthetic evolution. It posits that the 'Soul of Craft' is not merely artistic intuition, but a cumulative system of tacit knowledge and material science.
+            </p>
+        </div>
+        <div class="mt-6 border-t border-gray-300"></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-6 md:py-10">
+      <figure class="mx-auto w-1/3 md:w-1/4 overflow-hidden">
+        <img src="asset/img/map_blue_transparent.png" alt="Crafts Narrative Map" class="w-full h-auto object-contain">
+      </figure>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item1.png" alt="Blue-and-White Dish" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 1</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            Foundation: Cobalt and the Art of Underglaze Painting
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Blue-and-White Dish (cat. no. 2)</p>
+          
+          <div class="view-content view-public active">
+            <p>Blue-and-white porcelain is a form of underglaze decoration. Artisans paint cobalt pigment directly onto the dried clay body, apply a clear glaze, and fire the piece once in a reducing atmosphere at around 1300°C. In the kiln, the cobalt turns a vivid blue and becomes permanently sealed beneath the glaze, giving the decoration its timeless, unfading colour.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Painting Before Baking 🖌️</strong><br>Imagine drawing a picture that never fades! Potters painted with a special blue ink called "cobalt" on the clay BEFORE putting it in the oven. Then they put a clear glass-like coat over it. When it came out, the blue picture was trapped inside the glass forever!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>The mastery of underglaze cobalt marks the transition to high-temperature painted ceramics. The technical challenge lay in controlling the diffusion of cobalt oxide at 1300°C within a reducing atmosphere. This success established the "Blue and White" hegemony in global ceramics, defining a new visual standard of permanence and contrast.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item2.png" alt="Doucai Bowl" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 2</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            The Birth of Doucai: The First Dialogue Between Underglaze and Overglaze
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Doucai Bowl (cat. no. 3)</p>
+          
+          <div class="view-content view-public active">
+            <p>Doucai combines two firings. First, cobalt outlines are painted and fired under a clear glaze to produce a blue-and-white base. Then coloured enamels are applied within the outlines and fired again at around 800°C. The appeal of doucai lies in the harmony between the calm underglaze blue and the bright overglaze colours.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Coloring Inside the Lines 🖍️</strong><br>This is like a coloring book! First, the artist draws the blue outlines and bakes the bowl. Then, they fill in the shapes with red, green, and yellow paints and bake it AGAIN. It takes double the work to make it look this pretty!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>Doucai ("Contending Colors") represents a significant leap in kiln management: the synchronization of high-temperature reduction firing (for the underglaze blue outline) and low-temperature oxidation firing (for the overglaze enamels). It conceptualized the ceramic surface as a layered space, integrating two distinct material palettes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item3.png" alt="Wucai Vase" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 3</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            The Flourishing of Wucai: The Independence of Overglaze Colour
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Wucai Gourd Vase (cat. no. 1)</p>
+          
+          <div class="view-content view-public active">
+            <p>Wucai is a fully developed overglaze enamel technique. Bright pigments, typically red, yellow, green and purple, are painted directly onto an already-fired white glaze and fixed through a low-temperature refiring. With its bold contrasts and vivid palette, wucai marks the independence of overglaze painting from the blue-and-white tradition.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Five Colors Party! 🎉</strong><br>Wucai means "Five Colors". Instead of just blue, artists now used lots of bright red, green, and yellow on top of the white porcelain. It's like painting with bright markers on a whiteboard!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>Wucai signifies the liberation of polychrome enamels from the subservience to underglaze blue outlines (as in Doucai). By applying robust, opaque enamels directly onto the fired glaze, artisans achieved a more painterly and expressive freedom, setting the stage for the later developments of the Famille Verte palette.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item4.png" alt="Falangcai Bowl" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 4</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            Falangcai at Its Peak: A Royal Technique of Western Origin
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Falangcai Tea Bowl (cat. no. 5)</p>
+          
+          <div class="view-content view-public active">
+            <p>Falangcai, or enamel painting on porcelain, employs enamel pigments introduced from the West. These colours are stable, richly varied, and visually textured. Jingdezhen provided the fine white bodies, which were then painted by court artists and fired at low temperatures in the imperial workshops. Thin, delicate, and exquisitely detailed, falangcai represents the height of Qing court craftsmanship.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>The Emperor's Secret Recipe 🤫</strong><br>This tiny bowl is super special. The white cup was made in Jingdezhen, but it was sent all the way to Beijing to be painted inside the Emperor's palace using special paints from Europe. Only the Emperor and his family could use these!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>Falangcai ("Enamel Colors") represents a unique instance of imperially monopolized production. The introduction of borate-based enamels from Europe allowed for a wider chromatic range and the ability to blend colors (shading). This technique was restricted to the Palace Workshops (Zaobanchu), creating a distinct class of porcelain divorced from the commercial output of Jingdezhen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item5.png" alt="Yangcai Vase" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 5</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            Yangcai: The Sinicized Expression of Western Aesthetics
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Yangcai Vase (cat. no. 6)</p>
+          
+          <div class="view-content view-public active">
+            <p>Yangcai shares its materials and techniques with falangcai, including Western enamels and shading. However, its motifs and layouts are distinctly Chinese, often using patterned grounds and shaped panels. If falangcai reflects a desire to emulate Western painting, then yangcai represents the integration of Western methods into Chinese decorative traditions.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Western Paints, Chinese Style 🏮</strong><br>After learning the secret recipes from Europe, Chinese artists started using them to paint traditional Chinese pictures, like birds and flowers. "Yangcai" basically means "Foreign Colors", but used in a very Chinese way!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>Yangcai ("Foreign Colors") marks the industrialization of the Falangcai palette at Jingdezhen. While chemically similar to court enamels, Yangcai was produced in the imperial kilns for broader palace use. Stylistically, it is characterized by the use of "sgraffito" (incised designs) on colored grounds and the integration of Western shading into traditional floral compositions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item6.png" alt="Famille-rose Vase" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 6</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            Narrative in Famille-Rose: Brushwork, Story, and Modern Innovation
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Famille-rose Vase "Mulan" (cat. no. 11)</p>
+          
+          <div class="view-content view-public active">
+            <p>Famille-rose enamels allow for subtle shading and soft transitions of colour, making them ideal for narrative scenes. On this vase, the story of Mulan's return is rendered with fluid lines and delicate modelling, echoing the techniques of traditional figure painting. Created by the modern Jingdezhen master Wang Dafan, the piece shows how Republican-period artists merged literati painting aesthetics with enamel decoration on porcelain.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Story Time on a Vase 📖</strong><br>This vase tells the story of Mulan! Because the new paints were so soft and easy to mix (like watercolors), artists could paint people's faces and clothes very gently. It looks just like a painting on paper, but it's on a hard vase!</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>This work by Wang Dafan exemplifies the "New Porcelain Art" of the Republic period. The technique of Famille-Rose (Fencai) is here liberated from decorative pattern to serve as a medium for literati-style painting. The focus shifts from the technical perfection of the glaze to the individual brushwork and narrative capability of the artist.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-transparent animate-slide-in">
+    <div class="max-w-7xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <figure class="w-2/3 md:w-1/2 mx-auto aspect-[4/3] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden shadow-soft">
+          <img src="asset/img/item7.jpeg" alt="Nine Cranes Dancing" class="w-full h-full object-cover">
+        </figure>
+
+        <div class="space-y-2 text-sm md:text-[0.95rem] leading-relaxed">
+          <p class="text-[0.75rem] tracking-[0.22em] uppercase text-gray-500 mb-1">Technique 7</p>
+          <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-black mb-1">
+            The Limits of Thin-Body Porcelain: Mastery of Form and Fire
+          </h2>
+          <p class="text-xs md:text-sm text-gray-600 italic mb-2">Object: Nine Cranes Dancing (cat. no. 11)</p>
+          
+          <div class="view-content view-public active">
+            <p>Thin-body porcelain demands extraordinary control during forming. The clay must be thrown to an extremely thin and even body, then survive drying and firing at around 1300°C without warping or collapsing. Successfully made pieces transmit light and ring like a chime, a testament to the highest mastery of Jingdezhen's forming techniques.</p>
+          </div>
+          <div class="view-content view-children">
+            <p><strong>Thin as an Eggshell 🥚</strong><br>This bowl is so thin that light can shine through it! It's super hard to make because the clay can easily collapse in the hot oven. Only the very best masters can make something this delicate without breaking it.</p>
+          </div>
+          <div class="view-content view-scholar">
+            <p>Eggshell porcelain (Boddiless ware) pushes the structural limits of the kaolin-petuntse matrix. The technique requires extreme precision in trimming (xiupi) to achieve walls less than 1mm thick. This represents the ultimate triumph of craftsmanship over material fragility, creating an object that is visually ethereal yet physically resilient.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech-epilogue" class="mt-12 md:mt-16 border-t border-gray-200 bg-transparent">
+    <div class="max-w-5xl mx-auto px-4 md:px-5 lg:px-6 py-8 md:py-10">
+      <h2 class="font-serif text-xl md:text-2xl font-semibold text-brand-blue mb-3">
+        Technique Epilogue · Learning to Read Surfaces
+      </h2>
+      
+      <div class="view-content view-public active">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-2">
+            Seen through technique, porcelain is a record of choices: which clay to refine, which pigments to mix, which firing schedule to trust. The seven sections of this exhibition invite visitors to read surfaces not only as images, but as traces of bodies, tools, and fire.
+        </p>
+      </div>
+      <div class="view-content view-children">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-2">
+            <strong>Secrets in the Clay 🔍</strong><br>
+            Next time you see a cup or plate, look closely! Can you see the blue paint under the glass? Can you feel the bumps of the enamel? Now you know the secrets of how they were made. Porcelain is not just a dish; it's a science experiment that turned into art!
+        </p>
+      </div>
+      <div class="view-content view-scholar">
+        <p class="text-sm md:text-base text-gray-800 leading-relaxed mb-2">
+            In conclusion, "The Soul of Craft" argues for a materialist reading of art history. By focusing on process rather than just iconography, we reveal porcelain as an accumulation of technical breakthroughs. These seven techniques demonstrate how material innovation drives aesthetic change, turning the kiln into a laboratory of cultural production.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-4 md:px-5 lg:px-6 pb-4">
+    <p class="text-xs md:text-sm text-gray-500 text-center">
+      <a href="collections.html" class="underline hover:text-brand-blue">
+        click here to see all the collections
+      </a>
+    </p>
+  </div>
+
+</main>
+
+  <footer class="bg-black text-ceramic-white py-12">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-8 md:mb-0">
+          <h3 class="text-2xl font-serif font-bold mb-2">Porcelain Witness</h3>
+          <p class="text-ceramic-gray">Five Centuries of China and the World</p>
+        </div>
+      </div>
+      <div class="border-t border-ceramic-gray/30 mt-8 pt-8 text-center text-ceramic-gray">
+        <p>Authored by UNIBO DHDK. Members: Yuming Lian, Xinyi Guo, Yutong Li</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="artifact-modal" id="artifactModal" aria-hidden="true">
+    <div class="artifact-modal-backdrop"></div>
+    <div class="artifact-modal-content" role="dialog" aria-modal="true">
+      <button class="artifact-modal-close" type="button" aria-label="Close">&times;</button>
+      <div class="artifact-modal-image-wrapper">
+        <img id="artifactModalImage" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="script/js/script.js?v=technique_final"></script>
+
+</body>
+</html>

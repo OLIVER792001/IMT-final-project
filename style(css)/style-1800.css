@@ -1,0 +1,65 @@
+/* style(css)/style-1800.css - Late Qing: Warm Frosted Glass */
+@import url("style.css");
+
+/* 1. 全局背景 */
+body {
+    background-image: url('../asset/img/1800bg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-color: #e8e6e1 !important;
+    color: #1a0f00 !important; /* 极深褐黑色文字 */
+    font-family: "Noto Serif SC", "Kaiti SC", serif !important;
+}
+
+/* 2. 核心改动：磨砂玻璃容器 */
+.container, main, .section-content, .intro-panel, .collection-item {
+    /* 背景色：半透明的暖米白 */
+    background-color: rgba(255, 253, 245, 0.65) !important;
+    /* 核心：背景模糊滤镜 (磨砂效果) */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important; /* Safari 兼容 */
+    /* 边框：极细的半透明白线，增加精致感 */
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    /* 阴影：柔和的浮起感 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important; /* 轻微圆角 */
+    padding: 25px !important;
+}
+
+/* 3. 导航栏 (深墨绿玻璃) */
+#mainNav {
+    background-color: rgba(47, 79, 79, 0.85) !important; /* 半透明墨绿 */
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 2px solid rgba(143, 188, 143, 0.5) !important;
+}
+#mainNav a { color: #f0fff0 !important; font-family: serif !important; letter-spacing: 1px; }
+
+/* 4. 标题与文字加强 */
+h1, h2, h3, p, span, li, strong, em {
+    color: #000000 !important; /* 确保文字在半透明底上绝对清晰 */
+    text-shadow: none !important; /* 去掉不必要的阴影，保持干净 */
+}
+/* 特殊处理：让原本灰色的文字变深 */
+.text-ceramic-gray { color: #333333 !important; }
+
+
+/* 5. 图片 (清晰无滤镜) */
+img, video {
+    filter: none !important;
+    border: 3px double rgba(47, 79, 79, 0.5) !important; /* 半透明墨绿双线框 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+img:hover, video:hover { transform: scale(1.01); }
+
+/* 6. 按钮 */
+.perspective-btn, .layout-btn {
+    border: 1px solid #2f4f4f !important;
+    background: rgba(255, 255, 255, 0.5) !important; /* 半透明按钮 */
+    backdrop-filter: blur(5px) !important;
+    color: #2f4f4f !important;
+}
+.perspective-btn.active, .layout-btn:hover {
+    background: #2f4f4f !important;
+    color: #fff !important;
+}

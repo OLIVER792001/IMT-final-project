@@ -1,0 +1,71 @@
+/* style(css)/style-2035.css */
+@import url("style.css");
+
+/* 1. 全局 (深空黑 + 网格) */
+body {
+    background-color: #050510 !important;
+    /* 赛博网格背景 */
+    background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px) !important;
+    background-size: 40px 40px !important;
+    color: #e0e0ff !important;
+    font-family: 'Courier New', monospace !important; /* 代码字体 */
+}
+
+/* 2. 导航栏 (玻璃霓虹) */
+#mainNav {
+    background-color: rgba(5, 5, 16, 0.8) !important;
+    border-bottom: 1px solid #00f0ff !important; /* 荧光蓝 */
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2) !important;
+}
+#mainNav a { color: #00f0ff !important; text-shadow: 0 0 5px #00f0ff; }
+
+/* 3. 卡片 (全息面板) */
+.collection-item, .exhibition-card, .intro-panel, .layout-panel {
+    background: rgba(10, 15, 30, 0.7) !important;
+    border: 1px solid rgba(0, 240, 255, 0.5) !important;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), inset 0 0 20px rgba(0, 240, 255, 0.05) !important;
+    border-radius: 4px !important;
+}
+/* 卡片悬停发光 */
+.collection-item:hover {
+    border-color: #ff00ff !important; /* 悬停变紫红 */
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.3) !important;
+}
+
+/* 4. 标题 (故障风颜色) */
+h1, h2, h3 {
+    color: #fff !important;
+    text-shadow: 2px 0 #ff00ff, -2px 0 #00f0ff !important; /* 抖音风故障效果 */
+    font-weight: bold !important;
+}
+
+/* 5. 按钮 (发光边框) */
+.perspective-btn, .layout-btn {
+    background: transparent !important;
+    border: 1px solid #00f0ff !important;
+    color: #00f0ff !important;
+    font-family: monospace !important;
+    text-transform: uppercase;
+}
+.perspective-btn.active, .layout-btn:hover {
+    background: #00f0ff !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px #00f0ff !important;
+}
+
+/* 6. Timeline 霓虹 */
+.timeline-line {
+    background: #00f0ff !important;
+    box-shadow: 0 0 10px #00f0ff;
+}
+.timeline-dot {
+    background: #000 !important;
+    border-color: #ff00ff !important;
+}
+.timeline-step.timeline-active .timeline-dot {
+    background: #ff00ff !important;
+    box-shadow: 0 0 15px #ff00ff;
+}
