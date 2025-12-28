@@ -1,4 +1,4 @@
-/* style(css)/style.css - FULL VERSION (Includes About Us) */
+/* style(css)/style.css - FULL VERSION (Fixed Modal Text Color) */
 
 /* ==========================================================================
    1. GLOBAL & UTILITIES
@@ -132,6 +132,15 @@ body.bg-ceramic-black { background-color: #121212 !important; color: #F8F8F8; }
 .modal-enter { opacity: 0; transform: scale(0.95); }
 .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 0.3s ease, transform 0.3s ease; }
 .modal-exit { opacity: 0; transform: scale(0.95); transition: opacity 0.2s ease, transform 0.2s ease; }
+
+/* 【修复】强制 Collections 弹窗内的标签文字为白色 */
+#detailModal .text-ceramic-gray, 
+#detailModal td {
+    color: #FFFFFF !important; /* 强制白色 */
+}
+#detailModal h2 {
+    color: #C5A065 !important; /* 保持标题金色 */
+}
 
 
 /* ==========================================================================
