@@ -1,39 +1,26 @@
-/* script/js/script.js - FINAL VERSION v13 (Fixed Reset & Better Images) */
+/* script/js/script.js - FINAL VERSION v13 (Fixed Reset & Better Images & Fixed Collections Modal) */
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("Global Script Loaded - v13 (Reset Fix + Better Images)");
+    console.log("Global Script Loaded - v13 (Reset Fix + Better Images + Modal Fix)");
 
     /* =================================================================
        0. THEME & HERO IMAGE SYSTEM
        ================================================================= */
     
-    // 更新后的精选底图 (更有画面感，不再是灰蒙蒙的)
+    // 更新后的精选底图
     const heroImages = {
         'default': 'asset/img/hero-bg.png', // 默认图
-        
-        // 1500~1650 明代：青花瓷纹理，清晰，蓝白对比强烈
         '1500': 'https://images.unsplash.com/photo-1628108180329-a1b72a6b281f?q=80&w=1920&auto=format&fit=crop', 
-        
-        // 1650~1800 盛清：宫廷红墙金瓦，富丽堂皇
         '1650': 'https://images.unsplash.com/photo-1599577908643-426554b4156c?q=80&w=1920&auto=format&fit=crop',
-        
-        // 1800~1900 晚清：外销瓷，西洋画风格，暖色调
         '1800': 'https://images.unsplash.com/photo-1578320491799-3174d8e788e0?q=80&w=1920&auto=format&fit=crop',
-        
-        // 1900~1990 民国/建国：红色调，大字报风格，或者现代陶艺特写
         '1900': 'https://images.unsplash.com/photo-1610444837599-52e42b20757a?q=80&w=1920&auto=format&fit=crop',
-        
-        // 1990~2035 现代：极简工作室，白色/原木色，明亮
         '1990': 'https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?q=80&w=1920&auto=format&fit=crop',
-        
-        // 2035~Future 未来：赛博朋克，深蓝/紫色，霓虹光
         '2035': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop'
     };
 
     let currentTheme = 'default';
 
     function initThemeSystem() {
-        // 1. 获取主题
         const urlParams = new URLSearchParams(window.location.search);
         const urlTheme = urlParams.get('theme');
         const storedTheme = localStorage.getItem('porcelain_theme');
@@ -45,37 +32,29 @@ document.addEventListener('DOMContentLoaded', function () {
             currentTheme = storedTheme;
         }
 
-        // 2. 应用 CSS (核心修复：支持 Reset 回 default)
-        const linkTag = document.querySelector('link[href*="style(css)/style"]'); // 模糊匹配，防止找不到
+        const linkTag = document.querySelector('link[href*="style(css)/style"]');
         if (linkTag) {
             if (currentTheme && currentTheme !== 'default') {
                 console.log(`Applying Theme: ${currentTheme}`);
                 linkTag.href = `style(css)/style-${currentTheme}.css`;
             } else {
                 console.log("Resetting to Default Theme");
-                linkTag.href = `style(css)/style.css`; // 强制回滚到默认 CSS
+                linkTag.href = `style(css)/style.css`;
             }
         }
 
-        // 3. 应用背景大图
         updateHeroImage(currentTheme);
-
-        // 4. 更新链接参数
         updateAllLinks(currentTheme);
     }
 
-    // 辅助函数：更新背景图
     function updateHeroImage(theme) {
-        const heroImg = document.querySelector('header img'); // 仅针对 Header 里的图
+        const heroImg = document.querySelector('header img');
         if (heroImg && heroImages[theme]) {
-            // 简单淡入淡出逻辑
             heroImg.style.opacity = '0';
             setTimeout(() => {
                 heroImg.src = heroImages[theme];
-                // 如果是网络图片，onload 后再显示；如果是本地(default)，直接显示
                 if (theme === 'default') {
                     heroImg.onload = () => { heroImg.style.opacity = '1'; };
-                    // 兼容缓存情况
                     if (heroImg.complete) heroImg.style.opacity = '1';
                 } else {
                     heroImg.onload = () => { heroImg.style.opacity = '1'; };
@@ -84,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // 辅助函数：更新链接
     function updateAllLinks(theme) {
         if (!theme || theme === 'default') return;
         const allLinks = document.querySelectorAll('a:not(.layout-btn):not([href^="#"]):not([href^="javascript"])');
@@ -101,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* =================================================================
-       1. LAYOUT PANEL BUTTONS (修复 Reset 按钮)
+       1. LAYOUT PANEL BUTTONS
        ================================================================= */
-    const layoutButtons = document.querySelectorAll('.layout-btn, a[data-theme="default"]'); // 选中 reset 按钮
+    const layoutButtons = document.querySelectorAll('.layout-btn, a[data-theme="default"]'); 
     
     layoutButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
@@ -116,11 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 localStorage.setItem('porcelain_theme', targetTheme);
             }
 
-            // 刷新页面
             let currentPath = window.location.pathname.split('/').pop() || 'index.html';
             
             if (targetTheme === 'default') {
-                // 彻底清除 URL 参数
                 window.location.href = currentPath;
             } else {
                 window.location.href = `${currentPath}?theme=${targetTheme}`;
@@ -247,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setActiveSection('1');
     }
 
-    // Modal
+    // Modal for Home/Exhibition Page
     const artifactImgs = document.querySelectorAll('img[src*="asset/img/item"]');
     const modal = document.getElementById('artifactModal');
     const modalImg = document.getElementById('artifactModalImage');
@@ -280,10 +256,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
     }
 
-    // Collections
+    // Collections Page Logic
     const collectionGrid = document.getElementById('collectionGrid');
     if (collectionGrid) {
-        // [DATA] (Kept same as before, no changes needed for this fix)
+        // [DATA]
         const artifactsData = [
             { id: 1, title: "Gourd-shaped vase", image: "asset/img/1500guo 1stpic.png", author: "Imperial Workshop", subject: "Porcelain-body famille-rose", description: "The “passionflower” is an exotic botanical motif...", date: "Ming dynasty, Jiajing period", type: "Porcelain", dimension: "H: 42.5 cm", source: "NPM", place: "Jingdezhen", isVideo: false },
             { id: 2, title: "Blue-and-white dish", image: "asset/img/xinyi2.png", author: "Unknown", subject: "Blue-and-white porcelain", description: "Decorated in underglaze blue with floral designs.", date: "Ming dynasty, Wanli period", type: "Porcelain", dimension: "D: 21 cm", source: "Palace Museum", place: "Jingdezhen", isVideo: false },
@@ -343,23 +319,75 @@ document.addEventListener('DOMContentLoaded', function () {
         const dImg = document.getElementById('modalImg');
         const dVideo = document.getElementById('modalVideo');
         
+        // ==========================================
+        //  修复后的 openDetailModal 函数
+        // ==========================================
         window.openDetailModal = function(item) {
-            document.getElementById('modalTitle').innerText = item.title;
-            // (其余元数据填充代码同前，省略以防刷屏)
-            // ...
-            detailModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            // 辅助函数：设置文本，如果找不到ID则不报错
+            const setVal = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = val || '';
+            };
+
+            // 1. 填充文本元数据
+            setVal('modalTitle', item.title);       // 顶部大标题
+            setVal('modalTitleMeta', item.title);   // 表格里的标题
+            setVal('modalAuthor', item.author);
+            setVal('modalSubject', item.subject);
+            setVal('modalDescription', item.description);
+            setVal('modalDate', item.date);
+            setVal('modalType', item.type);
+            setVal('modalSize', item.dimension);    // 数据里叫 dimension，HTML ID 是 modalSize
+            setVal('modalPlace', item.place);
+            
+            // 链接特殊处理
+            const sourceLink = document.getElementById('modalSource');
+            if (sourceLink) {
+                sourceLink.innerText = item.source;
+                // 如果将来 source 是链接，可以加 sourceLink.href = item.sourceUrl;
+            }
+
+            // 2. 处理图片 vs 视频
+            if (item.isVideo) {
+                if(dImg) dImg.classList.add('hidden');
+                if(dVideo) {
+                    dVideo.classList.remove('hidden');
+                    dVideo.src = item.image; 
+                    dVideo.play();
+                }
+            } else {
+                if(dVideo) {
+                    dVideo.pause();
+                    dVideo.classList.add('hidden');
+                }
+                if(dImg) {
+                    dImg.classList.remove('hidden');
+                    dImg.src = item.image;
+                }
+            }
+
+            // 3. 显示弹窗
+            if (detailModal) {
+                detailModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
         };
 
         window.closeDetailModal = function() {
-            detailModal.classList.add('hidden');
-            dVideo.pause();
+            if (detailModal) {
+                detailModal.classList.add('hidden');
+            }
+            if (dVideo) {
+                dVideo.pause();
+            }
             document.body.style.overflow = '';
         };
 
-        detailModal.addEventListener('click', (e) => {
-            if (e.target === detailModal) closeDetailModal();
-        });
+        if (detailModal) {
+            detailModal.addEventListener('click', (e) => {
+                if (e.target === detailModal) closeDetailModal();
+            });
+        }
 
         renderGrid(artifactsData);
     }
