@@ -53,3 +53,11 @@ h1, h2, h3 {
     background: #ffd700 !important; 
     box-shadow: 0 0 10px #ffd700 !important; 
 }
+main {
+    padding-top: 160px !important; 
+}
+
+/* 如果你用了磨砂玻璃效果，请确保 .container 的 padding 不要覆盖上面的 main */
+.container {
+    padding: 25px !important; 
+}
