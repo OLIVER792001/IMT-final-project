@@ -59,6 +59,14 @@ h1, h2, h3 {
     background-color: #8b2e2e !important;
     color: #fffcf5 !important;
 }
+main {
+    padding-top: 160px !important; 
+}
+
+/* 如果你用了磨砂玻璃效果，请确保 .container 的 padding 不要覆盖上面的 main */
+.container {
+    padding: 25px !important; 
+}
 
 /* 6. Timeline 特殊处理 */
 .timeline-line { background: #162e58 !important; width: 3px !important; }
