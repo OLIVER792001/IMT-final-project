@@ -61,3 +61,11 @@ img, video {
     background-color: #fff !important;
     color: #b22222 !important;
 }
+main {
+    padding-top: 160px !important; 
+}
+
+/* 如果你用了磨砂玻璃效果，请确保 .container 的 padding 不要覆盖上面的 main */
+.container {
+    padding: 25px !important; 
+}
