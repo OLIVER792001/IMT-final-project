@@ -1,4 +1,4 @@
-/* style(css)/style.css - FULL VERSION (Fixed Modal Text Color) */
+/* style(css)/style.css - FULL VERSION (Fixed Button Colors & Modal) */
 
 /* ==========================================================================
    1. GLOBAL & UTILITIES
@@ -101,16 +101,23 @@ body.page-culture { background-color: #fdf9fd; }
 
 /* Perspective Switcher */
 .perspective-controls { display: flex; gap: 10px; margin-top: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+
 .perspective-btn {
     padding: 8px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
     border: 1px solid #e5e7eb; background-color: #ffffff; color: #666;
     transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.05em;
 }
+
 .perspective-btn:hover { background-color: #f3f4f6; border-color: #d1d5db; }
+
+/* 【修复】按钮激活状态颜色改为淡灰色 */
 .perspective-btn.active {
-    background-color: #ea580c; color: #ffffff; border-color: #ea580c;
-    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+    background-color: #d4d4d8; /* 淡灰色 (Zinc-300) */
+    color: #1A1A1A; /* 深色文字，保证对比度 */
+    border-color: #a1a1aa; /* 稍深的灰色边框 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
 }
+
 .view-content { display: none; animation: fadeInContent 0.5s ease; }
 .view-content.active { display: block; }
 @keyframes fadeInContent { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
