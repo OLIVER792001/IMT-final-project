@@ -33,6 +33,6 @@ The museum is organized into three distinct narratives, guiding the visitor thro
 
 ## 👥 Team Members
 
-* **[Yuming Lian](https://github.com/OLIVER792001)** - Project Lead & Mian Developer
+* **[Yuming Lian](https://github.com/OLIVER792001)** - Project Lead & Main Developer
 * **[Xinyi Guo](https://github.com/GGGGGuoxy)** - Developer & Visual Designer
 * **[Yutong Li]** - Developer & Content Curator
