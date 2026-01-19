@@ -12,7 +12,7 @@ It was created for the course **Information Modelling and Web Technologies** for
 
 Our goal is to present the evolution of this art form through an interactive interface, allowing users to explore high-quality images and detailed narratives about specific artifacts based on the MMMM framework.
 
-**📍 Visit the Museum:** [Click here to view the live website](https://oliver792001.github.io/IMT-final-project/)
+**📍 Visit the Museum:** [Click here to view the live website](https://oliver792001.github.io/Chinese-Porcelain-Withness/)
 
 ---
 
