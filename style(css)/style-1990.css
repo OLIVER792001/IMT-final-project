@@ -93,33 +93,28 @@ main {
     color: #ffffff !important;
 }
 /* ==========================================================================
-   8. 终极修复：Exhibition 下拉菜单 (强制白字黑底)
+   EXHIBITION 下拉菜单专属修复
    ========================================================================== */
 
-/* 1. 强制下拉菜单容器背景为深黑色 (为了让白字显现) */
-#mainNav .dropdown-menu,
-.dropdown-menu {
+/* 1. 强制下拉菜单容器背景为深黑色 */
+#mainNav .dropdown-menu {
     background-color: rgba(20, 20, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
 }
 
-/* 2. 核心：强制覆盖 #mainNav a 的黑色设置 */
-/* 我们必须使用比 #mainNav a 更长的选择器，或者使用 * 通配符来强制变白 */
-
-#mainNav .dropdown-menu a,             /* 针对链接 */
-#mainNav .dropdown-menu .dropdown-item, /* 针对 Bootstrap item */
-#mainNav .dropdown-menu li a,          /* 针对列表链接 */
-#mainNav .dropdown-menu span {         /* 针对文字 span */
-    color: #ffffff !important;
+/* 2. 核心修复：强制文字变白 */
+/* 我们在前面加了 'body' 标签，这会提升 CSS 的权重，强行覆盖掉之前的黑色设置 */
+body #mainNav .dropdown-menu a,
+body #mainNav .dropdown-menu .dropdown-item,
+body #mainNav .dropdown-menu li,
+body #mainNav .dropdown-menu span {
+    color: #FFFFFF !important; /* 强制白色 */
 }
 
-/* 3. 鼠标悬停效果 (Hover) */
-/* 鼠标移上去时，背景变白，文字变黑 (符合1990黑白反差风格) */
-#mainNav .dropdown-menu a:hover,
-#mainNav .dropdown-menu .dropdown-item:hover,
-#mainNav .dropdown-menu li a:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-radius: 4px;
+/* 3. 鼠标悬停交互：背景变白，文字变黑 (经典黑白反转) */
+body #mainNav .dropdown-menu a:hover,
+body #mainNav .dropdown-menu .dropdown-item:hover {
+    background-color: #FFFFFF !important; /* 背景变白 */
+    color: #000000 !important; /* 文字变黑 */
 }
