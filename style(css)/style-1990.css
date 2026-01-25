@@ -38,8 +38,11 @@ body {
 #mainNav a { color: #000 !important; font-weight: 500 !important; }
 
 /* 4. 文字颜色强制修正 (防止有白色文字看不见) */
-h1, h2, h3, p, span, li, strong, em, a, .text-ceramic-white, .text-ceramic-gray {
-    color: #000000 !important; /* 强制所有文字变黑 */
+/* 只在主内容区强制黑字，避免影响侧边栏/弹窗 */
+main h1, main h2, main h3, main p, main span, main li, main strong, main em, main a,
+.container h1, .container h2, .container h3, .container p, .container span, .container li, .container strong, .container em, .container a,
+.text-ceramic-white, .text-ceramic-gray {
+    color: #000000 !important;
 }
 .text-ceramic-gray { color: #444444 !important; } /* 次要文字深灰 */
 
