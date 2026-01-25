@@ -92,16 +92,21 @@ main {
 #layoutPanel div, #layoutPanel label, #layoutPanel i {
     color: #ffffff !important;
 }
+
 /* ==========================================================================
-   EXHIBITION 下拉菜单专属修复
+   EXHIBITION 下拉菜单专属修复 - 【已修复】
    ========================================================================== */
 
-/* 我们在前面加了 'body' 标签，这会提升 CSS 的权重，强行覆盖掉之前的黑色设置 */
-body #mainNav .dropdown-menu a,
-body #mainNav .dropdown-menu .dropdown-item,
-body #mainNav .dropdown-menu li,
-body #mainNav .dropdown-menu span {
+/* 修复下拉菜单文字颜色 - 使用 nav-dropdown 类名（根据 HTML 结构） */
+body #mainNav .nav-dropdown,
+body #mainNav .nav-dropdown a,
+body #mainNav .nav-dropdown .block {
     color: #FFFFFF !important; /* 强制白色 */
+    background-color: rgba(26, 26, 26, 0.95) !important; /* 确保深色背景 */
 }
 
-
+/* 悬停效果也保持白色 */
+body #mainNav .nav-dropdown a:hover {
+    color: #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
