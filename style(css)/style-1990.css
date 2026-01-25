@@ -75,3 +75,7 @@ main {
 .container {
     padding: 25px !important; 
 }
+/* 黑底弹窗文字改白（只在你确定弹窗背景是黑色时用） */
+#layoutPanel, #layoutPanel * {
+    color: #fff !important;
+}
