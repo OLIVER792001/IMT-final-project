@@ -39,6 +39,27 @@
 .animate-slide-in.active { opacity: 1; transform: translateX(0); }
 .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
 
+/* 【修复】文本两端对齐 - 优化版，解决间距问题 */
+p {
+    text-align: justify;
+    text-align-last: left; /* 最后一行左对齐，避免强制拉伸 */
+    word-spacing: -0.05em; /* 稍微缩小单词间距 */
+    letter-spacing: 0.01em; /* 增加字母间距，让文字更舒展 */
+    hyphens: auto; /* 允许单词在必要时断行 */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    line-height: 1.7; /* 增加行高，提升可读性 */
+}
+
+/* 保持标题、按钮等元素的原始对齐方式 */
+h1, h2, h3, h4, h5, h6, 
+button, 
+.text-center,
+nav,
+footer p {
+    text-align: inherit;
+}
+
 
 /* ==========================================================================
    2. HOMEPAGE SPECIFIC
@@ -113,7 +134,7 @@ body.page-culture { background-color: #fdf9fd; }
 /* 【修复】按钮激活状态颜色改为淡灰色 */
 .perspective-btn.active {
     background-color: #d4d4d8; /* 淡灰色 (Zinc-300) */
-    color: #1A1A1A; /* 深色文字，保证对比度 */
+    color: #1A1A1A; /* 深色文字,保证对比度 */
     border-color: #a1a1aa; /* 稍深的灰色边框 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
 }
