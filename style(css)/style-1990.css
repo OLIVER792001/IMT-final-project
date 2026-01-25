@@ -92,3 +92,25 @@ main {
 #layoutPanel div, #layoutPanel label, #layoutPanel i {
     color: #ffffff !important;
 }
+/* --- 修复：导航栏下拉菜单文字变白 --- */
+
+/* 1. 确保下拉菜单背景是深色 (根据截图看已经是深色，这里为了保险再次确认) */
+#mainNav .dropdown-menu {
+    background-color: rgba(30, 30, 30, 0.95) !important; /* 深黑灰背景 */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 微微发光的边框 */
+}
+
+/* 2. 核心：强制下拉菜单里的链接文字变成白色 */
+/* 这里的优先级需要非常高，以覆盖 #mainNav a 的黑色设置 */
+#mainNav .dropdown-menu a,
+#mainNav .dropdown-item,
+#mainNav .dropdown-menu li a {
+    color: #ffffff !important; 
+}
+
+/* 3. 鼠标悬停时的效果 (可选：增加一点高亮，确保交互清晰) */
+#mainNav .dropdown-menu a:hover,
+#mainNav .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* 悬停时背景微亮 */
+    color: #ffffff !important;
+}
