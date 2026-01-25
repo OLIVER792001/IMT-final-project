@@ -38,7 +38,7 @@ body {
 #mainNav a { color: #000 !important; font-weight: 500 !important; }
 
 /* 4. 文字颜色强制修正 (防止有白色文字看不见) */
-/* 只在主内容区强制黑字，避免影响侧边栏/弹窗 */
+/* 注意：这里增加了 :not(#layoutPanel *) 的逻辑并不容易实现，所以我们在第7点通过更高优先级覆盖 */
 main h1, main h2, main h3, main p, main span, main li, main strong, main em, main a,
 .container h1, .container h2, .container h3, .container p, .container span, .container li, .container strong, .container em, .container a,
 .text-ceramic-white, .text-ceramic-gray {
@@ -75,7 +75,20 @@ main {
 .container {
     padding: 25px !important; 
 }
-/* 黑底弹窗文字改白（只在你确定弹窗背景是黑色时用） */
-#layoutPanel, #layoutPanel * {
-    color: #fff !important;
+
+/* 7. 修复：黑底弹窗样式与文字颜色 */
+#layoutPanel {
+    /* 确保弹窗背景是深色的 */
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 核心修改：明确列出所有子标签，确保优先级高于第4点 */
+#layoutPanel, 
+#layoutPanel h1, #layoutPanel h2, #layoutPanel h3, #layoutPanel h4,
+#layoutPanel p, #layoutPanel span, #layoutPanel li, 
+#layoutPanel strong, #layoutPanel em, #layoutPanel a,
+#layoutPanel div, #layoutPanel label, #layoutPanel i {
+    color: #ffffff !important;
 }
