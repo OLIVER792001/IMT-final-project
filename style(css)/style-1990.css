@@ -96,14 +96,6 @@ main {
    EXHIBITION 下拉菜单专属修复
    ========================================================================== */
 
-/* 1. 强制下拉菜单容器背景为深黑色 */
-#mainNav .dropdown-menu {
-    background-color: rgba(20, 20, 20, 0.95) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-}
-
-/* 2. 核心修复：强制文字变白 */
 /* 我们在前面加了 'body' 标签，这会提升 CSS 的权重，强行覆盖掉之前的黑色设置 */
 body #mainNav .dropdown-menu a,
 body #mainNav .dropdown-menu .dropdown-item,
@@ -112,9 +104,4 @@ body #mainNav .dropdown-menu span {
     color: #FFFFFF !important; /* 强制白色 */
 }
 
-/* 3. 鼠标悬停交互：背景变白，文字变黑 (经典黑白反转) */
-body #mainNav .dropdown-menu a:hover,
-body #mainNav .dropdown-menu .dropdown-item:hover {
-    background-color: #FFFFFF !important; /* 背景变白 */
-    color: #000000 !important; /* 文字变黑 */
-}
+
