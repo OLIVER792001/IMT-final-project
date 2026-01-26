@@ -22,7 +22,7 @@
     background-image: url('../asset/img/vase-background.jpg');
     background-size: cover; background-position: center; background-repeat: no-repeat;
 }
-.intro-panel { background: rgba(247, 241, 227, 0.8); }
+.intro-panel { background: rgba(247, 241, 227, 10); }
 
 /* Scrollbar */
 .section-scroll { scrollbar-width: thin; scrollbar-color: #cbd5f5 transparent; }
