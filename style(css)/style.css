@@ -22,7 +22,7 @@
     background-image: url('../asset/img/vase-background.jpg');
     background-size: cover; background-position: center; background-repeat: no-repeat;
 }
-.intro-panel { background: rgba(247, 241, 227, 0.8); }
+.intro-panel { background: rgba(247, 241, 227, 0.95); }
 
 /* Scrollbar */
 .section-scroll { scrollbar-width: thin; scrollbar-color: #cbd5f5 transparent; }
@@ -64,6 +64,17 @@ footer p {
 /* ==========================================================================
    2. HOMEPAGE SPECIFIC
    ========================================================================== */
+
+/* 【修复】Banner 副标题居中 - 使用更强的选择器 */
+header p,
+header .container p,
+header .text-ceramic-white {
+    text-align: center !important;
+    text-align-last: center !important; /* 确保最后一行也居中 */
+    word-spacing: normal !important; /* 重置单词间距 */
+    letter-spacing: normal !important; /* 重置字母间距 */
+}
+
 .slider-container { position: relative; overflow: hidden; height: 100%; }
 .slider { display: flex; transition: transform 0.5s ease; height: 100%; }
 .slide { min-width: 100%; height: 100%; }
@@ -174,6 +185,32 @@ body.bg-ceramic-black { background-color: #121212 !important; color: #F8F8F8; }
 /* ==========================================================================
    6. ABOUT US SPECIFIC (NEW!)
    ========================================================================== */
+
+/* 【修复】Footer 内容居中 - 确保整个 Footer 内容居中对齐 */
+footer h3,
+footer p,
+footer .text-ceramic-gray,
+footer div p {
+    text-align: center !important;
+    text-align-last: center !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+}
+
+/* 确保 footer 内部所有容器都完全居中 */
+footer .flex {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+footer > div,
+footer .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
